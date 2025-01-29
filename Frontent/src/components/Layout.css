@@ -1,0 +1,48 @@
+/* WhatsApp button styling */
+.whatsapp-btn2 {
+    position: fixed;
+    bottom: 20px;  /* Adjust to your preference */
+    right: 20px;  /* Adjust to your preference */
+    background-color: green;  /* WhatsApp green */
+    color: white;
+    font-size: 1rem;  /* Adjust size */
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;  /* Smooth transition for all properties */
+    z-index: 9999;  /* Make sure it's above other content */
+    cursor: pointer;
+    transform-style: preserve-3d;  /* Required for 3D flip effect */
+  }
+  
+  /* Smooth floating and flipping effect */
+  .whatsapp-btn2:hover {
+    transform: translateY(-10px) scale(1.1) rotateY(180deg);  /* Moves it up, increases size, and flips */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);  /* Enhance shadow on hover */
+    animation: float 1.2s ease-in-out infinite;  /* Animation for floating effect */
+  }
+  
+  /* Keyframes for floating effect */
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);  /* Float upwards */
+    }
+    100% {
+      transform: translateY(0);  /* Return to the original position */
+    }
+  }
+  
+  /* WhatsApp icon styling */
+  .whatsapp-btn2 i {
+    font-size: 1.5rem;  /* Adjust size */
+    transition: transform 0.5s ease;  /* Smooth transition for the icon */
+  }
+  
+  /* Flip animation for the icon (if needed) */
+  .whatsapp-btn2:hover i {
+    transform: rotateY(180deg);  /* Rotates the icon when hovered */
+  }
+  
