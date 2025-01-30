@@ -1,0 +1,80 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #F8F8F8;
+}
+
+/* Featured Products Section */
+.cards-featured-products {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.cards-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #D4A017; /* Gold color */
+  margin-bottom: 30px;
+}
+
+/* Container for Products */
+.cards-products-container {
+  display: grid;
+  margin: 0px 180px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Product Cards */
+/* .cards-product-card {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+} */
+
+.cards-product-card {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 500px; /* Adjust this value to make the cards narrower */
+  margin: 0 auto; /* Centers the card */
+}
+
+.cards-product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.cards-product-card img {
+  width: 290px;
+  height: 270px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.cards-product-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #E63946; /* Red color for product names */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cards-products-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .cards-products-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

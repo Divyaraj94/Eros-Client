@@ -7,7 +7,7 @@ const Navbar = () => {
   const [menuName, setMenuName] = useState("fa-solid fa-bars");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const Display = () => {
+  const Display = () =>   {
     if (menuName === "fa-solid fa-bars") {
       let menu = document.querySelector("#nav");
       menu.style.display = "flex";
@@ -40,38 +40,44 @@ const Navbar = () => {
           <i className={menuName} id="menu-btn" onClick={Display}></i>
         </div>
         <ul className="nav-link" id="nav">
-          <NavLink to="/">Home</NavLink>
-          <li className="dropdown">
-            <NavLink to="/shop" className="drop-btn">
-              Shop
-            </NavLink>
-            <div className="dropdown-menu">
-              <div className="left">
-                <NavLink to="/all">All</NavLink>
-                <NavLink to="/sweets">Sweets</NavLink>
-                <NavLink to="/namkeen">Namkeens</NavLink>
-                <NavLink to="/dry-friuts">Dry Fruits</NavLink>
-              </div>
+  <NavLink to="/">Home</NavLink>
+  <li className="dropdown">
+    <NavLink to="/shop" className="drop-btn">
+      Shop
+    </NavLink>
+    <div className="dropdown-menu">
+      <div className="left">
+        <NavLink to="/all">All</NavLink>
+        <NavLink to="/sweets">Sweets</NavLink>
+        <NavLink to="/namkeen">Namkeens</NavLink>
+        <NavLink to="/dry-friuts">Dry Fruits</NavLink>
+      </div>
+      <div className="right">
+        <NavLink to="/bakery">Bakery</NavLink>
+        <NavLink to="/chocolate">Chocolate</NavLink>
+        <NavLink to="/others">Others</NavLink>
+      </div>
+    </div>
+  </li>
+  <li className="dropdown">
+    <NavLink to="/corporate" className="dropdown-btn">
+      Corporate
+    </NavLink>
+  </li>
+  <NavLink to="/about">About us</NavLink>
+  <NavLink to="/contact">Contact us</NavLink>
+  {/* Keep "Bulk Inquiry" styled like a NavLink but not route to a path */}
+  <li>
+    <a
+      className="bulk-inquiry"
+      onClick={handleBulkInquiryClick}
+      style={{ cursor: "pointer" }}
+    >
+      Bulk Inquiry
+    </a>
+  </li>
+</ul>
 
-              <div className="right">
-                <NavLink to="/bakery">Bakery</NavLink>
-                <NavLink to="/chocolate">Chocolate</NavLink>
-                <NavLink to="/others">Others</NavLink>
-              </div>
-            </div>
-          </li>
-
-          <li className="dropdown">
-            <NavLink to="/corporate" className="dropdown-btn">
-              Corporate
-            </NavLink>
-          </li>
-          <NavLink to="/about">About us</NavLink>
-          <NavLink to="/contact">Contact us</NavLink>
-          <NavLink><span className="nav-bulk-inquiry" onClick={handleBulkInquiryClick} style={{ cursor: "pointer" }}>
-            Bulk Inquiry
-          </span></NavLink>
-        </ul>
         <div className="icon">
           <NavLink to="/">
             <i className="fa-solid fa-magnifying-glass"></i>

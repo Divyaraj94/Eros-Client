@@ -22,7 +22,25 @@ const ProductSchema = new mongoose.Schema({
   StateOrigin: String,
 });
 
+const catSchema = new mongoose.Schema({
+  name: String,
+  image: String,
+});
+
 const Product = mongoose.model("Product", ProductSchema, "sweet");
+
+const Cat2 = mongoose.model("cat2", catSchema , "category");
+
+
+app.get("/cat2", async (req , res)=>{
+  try {
+    const cat = await Cat2.find();
+    res.json(cat);
+  } catch (error) {
+    console.log(error);
+    
+  }
+})
 
 // Connect to MongoDB
 mongoose
