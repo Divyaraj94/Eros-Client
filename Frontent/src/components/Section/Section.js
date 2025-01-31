@@ -1,49 +1,36 @@
-import React from 'react'
-import './Section.css'
-import img1 from '../assets/sweet1.jpg'
-import img2 from '../assets/namkeen1.jpg'
+import React from 'react';
+import './Section.css';
+import img1 from '../assets/sweet1.png';
+import img2 from '../assets/namkeen1.png';
 
 const Section = () => {
     return (
-        <>
-            <div className="banner-box">
-                <div className="top-box">
-                    <div className="img">
-
-                        <img src= {img1 } alt="product" />
-                    </div>
-                    <div className="top-right">
-
-                        <h2>Elegant Sweet Packaging</h2>
-                        <p>Celebrate special moments with our beautifully <br/>crafted sweet boxes</p>
-                       
-                       <div className="btn">
-                        <button>Explore Sweet Packaging</button>
-                       </div>
-                    </div>
-
-
-
+        <div className="sections-container">
+            {/* Sweet Packaging Section */}
+            <div className="section">
+                <div className="section-image">
+                    <img src={img1} alt="Sweet Packaging" />
                 </div>
-                <div className="bottom-box">
-                    <div className="bottom-left">
-
-                        <h2>Charming Namkeen Hampers</h2>
-                        <p>Delight your loved ones with our exquisite namkeen gift bags.</p>
-                        <div className="btn2">
-                        <button>Browse Namkeen Packaging</button>
-                       </div> 
-                    </div>
-
-                    <div className="img2">
-
-                        <img src= {img2} alt="product" />
-                    </div>
+                <div className="section-content">
+                    <h2>Graceful Packaging For Sweet</h2>
+                    <p>Celebrate special moments with our beautifully crafted sweet boxes.</p>
+                    <button>View More</button>
                 </div>
             </div>
 
-        </>
-    )
-}
+            {/* Namkeen Hampers Section */}
+            <div className="section">
+                <div className="section-content">
+                    <h2>Charming Namkeen Hampers</h2>
+                    <p>Delight your loved ones with our exquisite namkeen gift bags.</p>
+                    <button>View More</button>
+                </div>
+                <div className="section-image">
+                    <img src={img2} alt="Namkeen Hampers" />
+                </div>
+            </div>
+        </div>
+    );
+};
 
-export default Section
+export default Section;

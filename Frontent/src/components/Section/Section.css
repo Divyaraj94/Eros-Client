@@ -1,312 +1,86 @@
-.banner-box
-{
-    min-height: 100vh;
-    max-width: 100wh;
-    background-color: #FDF0D5;
-
-}
-
-.quality
-{   
-    display: flex;
-    max-width: 100wh;
-    height: 80px;
-    background-color: #E4B8B8;
-    align-items: center;
-    justify-content: center;
-    gap: 8.2rem;
-    margin-bottom: 20px;
-}
-
-.quality .img
-{
-    height: 100%;
-    width: 270px;
-    display: inline-block;
-    align-items: center;
-    justify-content: center;
-   
-    
-}
-
-#vegi
-{
-    height: 45px;
-    width: 45px;
-}
-.quality .img img{
-    margin: -12px 12px;
-}
-
-
-.quality .img span{
-    font-size: 1.2rem;
-    font-family: 'poppins';
-} 
-
-/*
-.banner-box .top-box
-{
-    width: 100%;
-    height: 450px;
-    border-radius: 30px;
-    display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 50px;
-    padding-left:4.5rem;
-
-}
-.banner-box .top-box .img{
-    height: 100%;
-    width: 550px;
-
-}
-
-    
-.banner-box .top-box img{
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-    border-radius: 30px;
-
-}
-
-.banner-box .top-box .top-right {
-    width: 50%;
-    letter-spacing: 2.3px; 
-    position: relative;
-    padding-top: 60px;
+/* Background with subtle stripes */
+.sections-container {
+    background-color: #fff8f2;
+    padding: 40px 0;
     display: flex;
     flex-direction: column;
-    align-items: center; 
-    padding-left: 70px;
-    justify-content: start;
-   
+    gap: 30px;
 }
 
-.banner-box .top-box .top-right h2
-{
-    font-size: 37px;
-    line-height: 40px;
-    margin-bottom: 30px;
-    color: #9d0910;
-   
-}
-
-.banner-box .top-box .top-right p{
-    
-    font-size: 18px;
-    margin-bottom: 30px;
-    color: #9d0910;
-    line-height: 30px;
-}
-
-
-
-
-
-.banner-box .top-box .top-right button{
-    height: 50px;
-    width: 260px;
-    border: 2px solid #9d0910;
-    border-radius: 8px;
-    color: #9d0910;
-    font-size: 17px;
-    position: absolute;
-    left: 4.9%;
-    top: 48%;
-
-    margin-left: 94px;
- 
-}
-
-.banner-box .top-box .top-right button:hover{
- cursor: pointer;
- transform: scale(1.02);
- box-shadow: 3px 3px 2px #9d0910;
-}
-
-.banner-box .bottom-box
-{
-    width: 100%;
-    height: 450px;
-    border: 2px solid balck;
-    border-radius: 30px;
+/* Each Section */
+.section {
     display: flex;
-    gap: 5rem;
-    padding-right: 4.5rem;
-    justify-content: space-evenly;
-    
-}
-
-.banner-box .bottom-box .bottom-left {
-
-    width: 48%;
-    padding-right: 50px;
-    margin-top: 85px;
-    position: relative;
-    letter-spacing: 2.3px; 
-    border-radius: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: flex-start;
-    margin-left: 80px;
-     
-}
-
-.banner-box .bottom-box .bottom-left h2
-{
-    font-size: 37px;
-    line-height: 40px;
-    margin-left: 40px;
-    margin-bottom: 30px;
-    color: #9d0910;
-}
-.banner-box .bottom-box .img2{
-    height: 100%;
-    width: 550px;
-
-    
-}
-
-.banner-box .bottom-box .img2 img{
-    height: 100%;
-    width: 100%;
-    border-radius: 30px;
-}
-.banner-box .bottom-box .bottom-left p{
-    font-size: 18px;
-    line-height: 30px;
-    text-align: start;
-    margin-bottom: 30px;
-    margin-left: 40px;
-    color: #9d0910;
-}
-
-
-.banner-box .bottom-box .bottom-left button{
-    height: 50px;
-    width: 260px;
-    position: absolute;
-    left: 0;
-    margin-left: 40px;
-    top: 52%;
-    align-items: end;
-    border: 2px solid #9d0910;
-    border-radius: 8px;
-    color: #9d0910;
-    font-size: 17px;
- 
-}
-
-.banner-box .bottom-box .bottom-left button:hover{
-    cursor: pointer;
-    transform: scale(1.02);
-    box-shadow: 3px 3px 2px #9d0910;
-   }*/
-
-
-.top-box, .bottom-box {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
+    gap: 30px;
+    width: 90%;
+    margin: 0 auto;
+    /* padding: 25px; */
     border-radius: 12px;
-    margin: 30px auto;
+    border: 2px solid rgba(242, 169, 169, 0.5);
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Image Styling */
+.section-image {
+    flex: 1;
+    display: flex;
+    justify-content: left;
+}
+
+.section-image img {
+    width: 90%;
+    height: 370px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+/* Text Content */
+.section-content {
+    flex: 1;
     padding: 20px;
-    max-width: 100vw;
-    background-color: #FDF0D5;
 }
 
-.img, .img2 {
-    flex: 1.3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    margin-right: 8rem;
+.section-content h2 {
+    color: #b81d39;
+    font-size: 35px;
+    font-weight: 700;
+    margin-bottom: 30px;
 }
 
-.top-box .img img, .img2 img {
-    width: 470px;
-    height: 470px;
-    background-position: center;
-    background-size: cover;
-    border-radius: 15px;
-    
-}
-.top-right
-{
-    margin-left: 3rem;
-    height: 470px;
-    width: 470px;
-}
-
-.bottom-left
-{
-    height: 470px;
-    width: 470px;
-}
-.top-right, .bottom-left {
-    flex: 1.5;
-    padding:  80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-h2 {
-    color: #9e1c3f;
-    font-size: 34px;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-
-p {
+.section-content p {
     color: #5d3b4b;
     font-size: 20px;
     line-height: 1.6;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
+/* Button Styling */
 button {
-    align-self: flex-start;
-    background-color: #f18a9b;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    font-size: 20px;
-    border-radius: 8px;
+    background-color: #D74658;
+    color: #F0C75B;
+    border: 2px solid #F0C75B;
+    padding: 10px 40px;
+    font-size: 16px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: 0.3s;
 }
 
 button:hover {
-    background-color: #9e1c3f;
-    color: white;
+    background-color: #b81d39;
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
-    .top-box, .bottom-box {
-        position: relative;
+    .section {
         flex-direction: column;
         text-align: center;
-        padding: 15px;
-        justify-content: center;
+        padding: 20px;
     }
 
-
-    .top-box .img img, .bottom-box .img2 img {
-        width: 350px;
-        height: 350px;
-    }
-
-    .top-right, .bottom-left {
-        padding: 10px;
-    }
-
-    button {
-        align-self: center;
+    .section-image img {
+        max-width: 300px;
     }
 }

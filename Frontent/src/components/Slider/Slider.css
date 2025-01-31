@@ -1,5 +1,4 @@
 
-  
   .slider {
     position: relative;
     height: 100vh;
@@ -27,39 +26,36 @@
   .slide-content {
     
     position: absolute; /* Places content over the image */
-    top: 50%; /* Centers vertically */
-    left: 5%; /* Aligns content to the right */
-    transform: translateY(-50%);
-    color: white;
+    top: 25%; /* Centers vertically */
+    left: 8%; /* Aligns content to the right */
+    /* transform: translateY(-50%); */
+    /* color: red; */
     padding-bottom: 100px;
-    /* padding: 20px; */
-    border-radius: 10px;
+    padding: 20px;
     max-width: 40%; /* Adjust content width */
     z-index: 10;
     padding: 20px;
     border-radius: 12px;
-    opacity: 1;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur( .5rem ); /* Add a blur effect */
-    -webkit-backdrop-filter: blur(10px); /* Safari support */
-    border-radius: 12px; /* Match parent border radius */
+    /* opacity: 1; */
+    /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); */
     
   }
   
   .slide-content h2 {
     font-size: 40px;
     margin-bottom: 25px;
-    color: white;
+    color: black;
   }
   
   .slide-content p {
     font-size: 20px;
-    color: white;
+    color: black;
     margin-bottom: 50px;
   }
   
-  .cta-button {
+  .cta-button1 {
     background-color: #96393F;
+    border: 2px solid #F0C75B;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -69,7 +65,7 @@
     width: 300px;
   }
   
-  /* .cta-button:hover {
+  /* .cta-button1:hover {
     background-color: #0056b3;
   } */
   
@@ -172,7 +168,7 @@
         margin-bottom: 50px;
       }
       
-      .cta-button {
+      .cta-button1 {
         background-color: #96393F;
         color: white;
         padding: 10px 20px;
@@ -243,7 +239,7 @@
           margin-bottom: 50px;
         }
         
-        .cta-button {
+        .cta-button1 {
           background-color: #96393F;
           color: white;
           padding: 10px 20px;

@@ -1,0 +1,92 @@
+.promos-container {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: #f8f8f8;
+  }
+  
+  .slider-title {
+    font-size: 1.8rem;
+    color: #f3a400;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  }
+  
+  .promo-card {
+    position: relative;
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* padding: 0px 0px; */
+    padding-top: 90px;
+    text-align: center;
+    width: 750px;
+    height: 150px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  }
+  
+  /* Smooth sliding effect */
+  .slide-animation {
+    transform: translateX(-10%);
+    opacity: 0;
+  }
+  
+  /* After animation, make it visible again */
+  .promo-card:not(.slide-animation) {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  
+  .promo-sticker {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: auto;
+    object-fit: contain;
+  }
+  
+  /* For the first promo sticker */
+  .promo-sticker-1 {
+    width: 120px; /* First sticker's width */
+    height: 110px;
+  }
+  
+  /* For the second promo sticker */
+  .promo-sticker-2 {
+    width: 190px; /* Second sticker's width */
+  }
+  
+  /* For the third promo sticker */
+  .promo-sticker-3 {
+    width: 150px; /* Third sticker's width */
+    height: 100px;
+  }
+  
+  
+  /* dots1 below the card */
+  .dots1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;  /* Add spacing between the card and dots1 */
+    gap: 10px;  /* Space between dots1 */
+    position: relative;  /* Ensure dots1 stay below */
+  }
+  
+  .dot1 {
+    width: 12px;
+    height: 12px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .dot1.active {
+    background-color: #f3a400;
+  }
+  
