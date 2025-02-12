@@ -59,18 +59,13 @@ const Info = () => {
             Set your delivery location to get started
           </p>
           <div className="line">
-            <div className="l1">
               <button
                 className="location-button"
                 onClick={handleUseCurrentLocation}
               >
                 📍 Use my current location
               </button>
-            </div>
-
-            <div className="l2">
               <span className="or-separator">or</span>
-            </div>
             <input
               type="text"
               placeholder="Enter the pickup location"
@@ -85,6 +80,10 @@ const Info = () => {
         {/* Divider */}
         <div className="next-section-divider">
           <div className="vertical-line-with-dot"></div>
+        </div>
+
+        <div className="next-section-divider-horizontal">
+          <div className="horizontal-line-with-dot"></div>
         </div>
 
         <div className="pickup-section">
@@ -113,7 +112,7 @@ const Info = () => {
         <h2>Savor the Taste of Tradition and Excellence!</h2>
         <p>
           Since 1990, we’ve been crafting the finest sweet and savory delights,
-          made with love and authentic recipes passed down through generations.
+          made with<br /> love and authentic recipes passed down through generations.
         </p>
       </div>
 

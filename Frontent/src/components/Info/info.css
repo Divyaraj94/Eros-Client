@@ -1,23 +1,10 @@
 /* Wrapper Styles */
 .next-section-wrapper {
+    width: 100%;
     font-family: Arial, sans-serif;
-    padding: 40px 20px;
-    /* margin: 1px; */
+    padding: 40px 0px;
     background-color: #f9fafb;
     text-align: center;
-}
-
-.line{
-    display: flex;
-}
-
-/* Adjusted Spacing between Elements */
-.l1, .l2, .pickup-input-box {
-    margin-left: 20px;  /* Space between buttons and input box */
-}
-
-.l2{
-    padding-top: 10px;
 }
 
 /* Top Section */
@@ -25,7 +12,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1000px;
+    max-width: 90%;
     margin: 40px auto;
     padding: 40px 20px;
     background-color: #ffffff;
@@ -33,6 +20,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Delivery and Pickup Section */
 .delivery-section, .pickup-section {
     flex: 1;
     text-align: center;
@@ -40,26 +28,45 @@
 
 .section-title {
     font-weight: bold;
+    font-size: 20px;
+    margin: 10px;
     color: #4b5563;
 }
 
 .section-subtitle {
     color: #6b7280;
+    margin: 10px;
     font-size: 14px;
 }
+
+.line{
+    justify-content: center;
+    display: flex;
+}
+
 
 .location-button {
     background-color: #ef4444;
     color: white;
     padding: 10px 20px;
+    margin-right: 20px;
     border: none;
-    border-radius: 20px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
+}
+
+.or-separator{
+    margin-right: 20px;
+    font-size: 20px;
+    line-height: 2;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .location-button:hover {
@@ -76,6 +83,7 @@
     outline: none;
 }
 
+/* Divider with Vertical Line (for Web only) */
 /* Divider with Dot */
 .next-section-divider {
     width: 2px;
@@ -85,33 +93,39 @@
 
 .vertical-line-with-dot {
     width: 2px;
-    height: 50px;
+    height: 140px;
     background: #000;
     position: relative;
     margin: 0 auto;
 }
 
-.vertical-line-with-dot::before {
+.vertical-line-with-dot::before,
+.vertical-line-with-dot::after {
     content: "";
     width: 8px;
     height: 8px;
     background: black;
     position: absolute;
-    top: 0%;
     left: 50%;
-    transform: translate(-50%, 0);
+    transform: translateX(-50%);
     border-radius: 50%;
 }
 
+.vertical-line-with-dot::before {
+    top: 0;
+}
+
+.vertical-line-with-dot::after {
+    bottom: 0;
+}
 
 
 /* Toggle Switch */
-
-.line2{
+.line2 {
     display: flex;
+    margin-top: 40px;
     justify-content: center;
 }
-
 
 .toggle-switch {
     position: relative;
@@ -121,7 +135,7 @@
     margin-left: 30px;  /* Space between the switch and text */
 }
 
-.pickup{
+.pickup {
     margin-left: 30px;
 }
 
@@ -175,8 +189,9 @@ input:checked + .toggle-slider:before {
 
 .next-section-heading p {
     color: #6b7280;
-    max-width: 700px;
-    margin: 0 auto;
+    font-size: 20px;
+    max-width: 90%;
+    margin: 30px auto;
 }
 
 /* Features Section */
@@ -185,14 +200,14 @@ input:checked + .toggle-slider:before {
     justify-content: center;
     align-items: center;
     gap: 40px;
-    max-width: 1000px;
+    max-width: 90%;
     margin: 40px auto;
 }
 
 .feature-column {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 70px;
     flex: 1;
 }
 
@@ -202,14 +217,14 @@ input:checked + .toggle-slider:before {
 }
 
 .feature-card h3 {
-    font-size: 18px;
+    font-size: 25px;
     font-weight: bold;
     color: #d97706;
 }
 
 .feature-card p {
     color: #4b5563;
-    font-size: 14px;
+    font-size: 20px;
 }
 
 /* Feature Image */
@@ -234,9 +249,9 @@ input:checked + .toggle-slider:before {
 .cta-button {
     width: 200px;
     background: #D74658;
-    color: #F0C75B;
+    color: white;
     padding: 10px 20px;
-    border: solid;
+    border: 3px solid #F0C75B;
     cursor: pointer;
     font-size: 16px;
     transition: 0.3s;
@@ -244,7 +259,8 @@ input:checked + .toggle-slider:before {
 }
 
 .cta-button:hover {
-    background: #b03544;
+    background: #F0C75B;
+    border: 3px solid #D74658;
 }
 
 /* Error Message */
@@ -259,13 +275,107 @@ input:checked + .toggle-slider:before {
     .next-section-top {
         flex-direction: column;
         padding: 15px;
+        justify-content: center;  /* Center the content */
     }
 
-    .next-section-features {
-        flex-direction: column;
+    /* For Tablet and Phone, remove Vertical Line and Add Horizontal Divider */
+    .next-section-divider {
+        display: none;  /* Hide vertical line */
     }
 
-    .feature-column {
+    .next-section-divider-horizontal {
+        display: block;  /* Show horizontal line */
+        width: 80%;
+        margin: 20px auto;
+        border-top: 1px solid black;
+    }
+
+    /* Button and Input Box side by side in Tablet */
+    .line {
+        display: flex;
+        justify-content: center;  /* Center the items */
+        gap: 20px;  /* Add space between the button and input box */
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .location-button {
+        width: 48%;  /* Make button smaller */
+        padding: 12px;
+        font-size: 16px;
+        border-radius: 10px;
         text-align: center;
+        background-color: #ef4444;
+        color: white;
+    }
+
+    .pickup-input-box {
+        width: 48%;  /* Make input box smaller */
+        padding: 12px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        outline: none;
+    }
+
+    /* Make feature images responsive on tablet */
+    .feature-image {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
     }
 }
+
+/* For phone view (smaller than 576px) */
+@media (max-width: 576px) {
+    .pickup-input-box {
+        width: 90%;  /* Input box takes more width on phone */
+        margin: 10px auto;
+    }
+
+    .location-button {
+        width: 90%;  /* Button also takes more width */
+        font-size: 16px;
+    }
+
+    /* Centering content for phone view */
+    .next-section-top {
+        padding: 15px;
+        text-align: center;
+    }
+
+    .line {
+        flex-direction: column;  /* Stack the button and input box */
+        gap: 15px;
+    }
+    
+    /* Additional adjustments for bottom content (features section) */
+    .next-section-features {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        padding: 10px;
+    }
+    
+    .feature-column {
+        width: 100%;
+    }
+    
+    .feature-card h3 {
+        font-size: 22px;
+    }
+    
+    .feature-card p {
+        font-size: 16px;
+    }
+    
+    /* Ensure feature image remains responsive */
+    .feature-image {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+}
+

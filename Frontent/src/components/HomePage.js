@@ -5,6 +5,8 @@ import Our_Collection from "./Our_Collections/Our_Collections";
 import Info from "./Info/Info";
 import Cards from "./cards/Cards";
 import Promos from "./Promos/Promos";
+import Testimonials from "./Testimonials/Testimonials";
+import BestSeller from "./BestSellers/BestSeller";
 
 const HomePage = () => {
   return (
@@ -14,7 +16,9 @@ const HomePage = () => {
       <Cards />
       <Promos />
       <Section />
-      <Our_Collection />
+      <Testimonials />
+      <BestSeller />
+      {/* <Our_Collection /> */}
     </>
   );
 };

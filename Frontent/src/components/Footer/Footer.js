@@ -1,6 +1,7 @@
 import React from "react";
-import "./Footer.css"; // Import the styles
-// import logo from "../assets/cake-logo.png"; // Replace with your logo path
+import "./Footer.css"; // Import styles
+import logo from "../assets/logo.png";
+import sticker from "../assets/sticker.png"; // Sticker for the top-right corner
 import facebookIcon from "../assets/facebook.png";
 import instagramIcon from "../assets/instagram.jpg";
 import twitterIcon from "../assets/Twit.png";
@@ -9,24 +10,38 @@ import upiIcon from "../assets/upi.png";
 import visaIcon from "../assets/visa.png";
 import gpayIcon from "../assets/gpay.png";
 import paytmIcon from "../assets/paytm.png";
-// import cakeIcon from "../assets/cake-second.png"
 
 const Footer = () => {
   return (
     <footer className="footer">
-    <div className="footer-top">
-        {/* <img src={logo} alt="Nicol's Cake Logo" className="footer-logo" />
-        <img src={cakeIcon} alt="Cake Icon" className="footer-cake-icon" /> */}
-      </div>
-      <div className="footer-top">
-        {/* Contact Information */}
-        <div className="footer-section">
+      {/* Sticker on top-right */}
+      <img src={sticker} alt="Sticker" className="footer-sticker" />
+
+      <div className="footer-container">
+        {/* Logo Column */}
+        <div className="footer-logo-container">
+          <img src={logo} alt="Eeros-sweets" className="footer-logo" />
+        </div>
+
+        {/* Address & Contact */}
+        <div className="footer-section contact-info">
           <h3>Contact Information</h3>
-          <p>
-            📍 One world, B-61, Nr. Sheetal Park, 150 ft. Ring Road, Rajkot-360001, Gujarat (India).
-          </p>
-          <p>📞 +123 4567 890</p>
-          <p>📧 contact@sweetnamkeen.com</p>
+          <table>
+            <tr>
+              <td>📍</td>
+              <td><p> One world, B-61, Nr. Sheetal Park, 150 ft. Ring Road, Rajkot-360001, Gujarat (India).</p></td>
+            </tr>
+
+            <tr>
+              <td>📞</td>
+              <td><p> +123 4567 890</p></td>
+            </tr>
+
+            <tr>
+              <td>📧</td>
+              <td><p> contact@sweetnamkeen.com</p></td>
+            </tr>
+          </table>
         </div>
 
         {/* Quick Links */}
@@ -34,11 +49,11 @@ const Footer = () => {
           <h3>Quick Links</h3>
           <ul>
             <li>Home</li>
-            <li>Products</li>
-            <li>Customize</li>
-            <li>Blog</li>
-            <li>About US</li>
-            <li>Contact US</li>
+            <li>Shop</li>
+            <li>About Us</li>
+            <li>Contact Us</li>
+            <li>Promo Codes</li>
+            <li>Store Locator</li>
           </ul>
         </div>
 
@@ -64,6 +79,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
+      {/* Grey Line */}
+      <div className="footer-divider"></div>
 
       {/* Bottom Section */}
       <div className="footer-bottom">

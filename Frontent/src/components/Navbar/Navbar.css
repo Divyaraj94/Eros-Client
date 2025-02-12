@@ -2,14 +2,14 @@
 
 
 
-.header .nav-link .active{
-    color: #9D0910;
+.header1 .nav-link .active{
+    color: #D74658;
 }
 
 html,body{
     height: 100%;
     width: 100%;
-    /* background-color: #9D0910; */
+    background-color: white;
 }
 
 
@@ -55,14 +55,16 @@ html,body{
     color: white;
     justify-content: center;
     font-size: 15px;
-    padding: 5px 0; /* Adjusted for better spacing */
+    padding: 5px 0;
     text-align: center;
     height: 30px;
-    z-index: 1500; /* Ensures it's on top of everything */
+    z-index: 1500;
+    display: flex;
+    align-items: center;
   }
   
-  /* Sticky header section */
-  .header {
+  /* Sticky header1 section */
+  .header1 {
     position: sticky;
     top: 30px; /* Below the offers section */
     width: 100%;
@@ -70,53 +72,49 @@ html,body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #FDF0D5; /* Add a visible background */
+    background-color: white; /* Add a visible background */
     transition: all 0.5s ease;
     z-index: 1200; /* Below the offers section */
-    padding: 45px 20px; /* Adjusted padding for responsiveness */
+    padding: 45px 40px; 
   }
   
 
-.header:hover {
-    background: #f7e4c2;
-}
-
-/* .header .logo {
+/* .header1 .logo1 {
     height: 5rem;
     width: 11rem;
     position: relative;
     margin-left: 15px;
 } */
 
-.header .logo img {
-    background-position: center;
+.header1 .logo1 img {
+    background-position: left;
     overflow: hidden;
     height: 70px;
 }
 
-.header .nav-link #caret-down {
+.header1 .nav-link #caret-down {
     margin-left: 9px;
     font-size: 18px;
 }
 
-.header .nav-link {
+.header1 .nav-link {
     display: flex;
     gap: 3.5rem;
     list-style: none;
 }
 
-.header .nav-link a {
+.header1 .nav-link a {
     text-decoration: none;
     color: #000;
     font-size: 1.3rem;
 }
 
-.header .nav-link a:hover {
-    color: #9D0910;
+.header1 .nav-link a:hover {
+    color: #D74658;
     scale: 1.1;
 }
 
-.header .icon {
+.header1 .icon {
     display: flex;
     gap: 2.2rem;
     align-items: center;
@@ -124,7 +122,7 @@ html,body{
     justify-content: space-between;
 }
 
-.header .icon a:hover {
+.header1 .icon a:hover {
     color: #9D0910;
     scale: 1.2;
 }
@@ -165,9 +163,9 @@ html,body{
     padding: 10px;
 }
 
-.dropdown-menu .left{
+/* .dropdown-menu .left{
     border-right: 2px solid gray;
-}
+} */
 
 
 .dropdown-menu a {
@@ -193,11 +191,11 @@ html,body{
     display: flex;
 }
 
-.header .menu-bar i{
+.header1 .menu-bar i{
     display: none;
 }
 
-.header .nav-link #close-btn{
+.header1 .nav-link #close-btn{
     display: none;
 }
 
@@ -206,25 +204,25 @@ html,body{
 @media(max-width:1178px) {
 
     
-    .header .nav-link
+    .header1 .nav-link
     {
         display: none;
     }
     
-    .header
+    .header1
     {
+        position: sticky;
         display: flex;
         align-items: center;
         justify-content: center;
-        position: relative;
     }
-    .header .logo{
+    .header1 .logo1{
         display: flex;
         justify-content: center;
         
     }
 
-    .header .menu-bar
+    .header1 .menu-bar
     {
         position: absolute;
         left: 0;
@@ -232,22 +230,22 @@ html,body{
         padding-left: 15px;
     }
 
-    .header .menu-bar i{
+    .header1 .menu-bar i{
         display: block;
         font-size: 30px;
     }
 
-    .header .icon{
+    .header1 .icon{
         position: absolute;
         right: 0;
         top: 12;
     }
 
-    .header #nav{
+    .header1 #nav{
         display: none;
         
     }
-    .header .nav-link
+    .header1 .nav-link
     {   
         z-index:999;
         margin-left: 0px;
@@ -266,41 +264,45 @@ html,body{
         
 
     }
-     .header #menu-btn{
+     .header1 #menu-btn{
         color: #000;
         
      }     
-    .header .dropdown-menu{
+    .header1 .dropdown-menu{
         height: 120px;
         line-height: 10px;
     }
-    .header .nav-link a{
+    .header1 .nav-link a{
         font-size: 17px;
     }
 
-    .header .dropdown #caret-down{
+    .header1 .dropdown #caret-down{
        position: absolute;
        right: 0;
        margin-right: 12px;
        top:-10px ;
     }
     
-    /* .header .nav-link a + .dropdown-menu a:hover{
+    /* .header1 .nav-link a + .dropdown-menu a:hover{
         transform: scale(0.01);
     } */
 }
 
 @media (max-width:580px) {
-    .header .icon #user{
+
+    .header1{
+        position: sticky;
+    }
+    .header1 .icon #user{
         display: none;
     }
 
-    .header .icon{
+    .header1 .icon{
         margin-left: 60px;
         padding-right: 0;
     }
     
-    .header .logo {
+    .header1 .logo1 {
         height: 3rem;
         width: 9rem;
         position: relative;

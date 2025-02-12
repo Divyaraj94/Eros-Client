@@ -24,21 +24,14 @@
   }
   
   .slide-content {
-    
-    position: absolute; /* Places content over the image */
-    top: 25%; /* Centers vertically */
-    left: 8%; /* Aligns content to the right */
-    /* transform: translateY(-50%); */
-    /* color: red; */
-    padding-bottom: 100px;
+    position: absolute;
+    top: 25%;
+    left: 8%;
+    color: black;
     padding: 20px;
-    max-width: 40%; /* Adjust content width */
+    max-width: 40%;
     z-index: 10;
-    padding: 20px;
     border-radius: 12px;
-    /* opacity: 1; */
-    /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); */
-    
   }
   
   .slide-content h2 {
@@ -54,20 +47,20 @@
   }
   
   .cta-button1 {
-    background-color: #96393F;
-    border: 2px solid #F0C75B;
+    background-color: #D74658;
+    border: 3px solid #F0C75B;
     color: white;
     padding: 10px 20px;
-    border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
     width: 300px;
   }
   
-  /* .cta-button1:hover {
-    background-color: #0056b3;
-  } */
+  .cta-button:hover {
+    background-color: #F0C75B;
+    border: 3px solid #D74658;
+  }
   
   .arrow {
     position: absolute;
@@ -82,11 +75,19 @@
     z-index: 1000;
     height: 50px;
     width: 50px;
-    font-size: 25px;
+    font-size: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
+  .arrow:hover{
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+  }
+
+
   
   .arrow.left {
     left: 10px;
@@ -118,75 +119,87 @@
     background-color: white;
   }
 
-  @media (max-width:1178px) {
-    .slider{
+/* Tablet-specific styles for Half-Screen and Centered Content */
+@media (max-width: 1178px) {
+  .slider {
     position: relative;
-    height: 100vh;
+    height: 50vh; /* Half screen height */
     width: 100%;
     overflow: hidden;
-    }
-
-    .slide img {
-        max-width: 100%;
-        height: 88vh;
-        display: block;
-        object-fit: cover;
-        background-position: center;
-        background-size: cover;
-      }
-
-
-      .slide-content {
-    
-        position: absolute; /* Places content over the image */
-        top: 60%; /* Centers vertically */
-        left: 7%; /* Aligns content to the right */
-        transform: translateY(-50%);
-        color: white;
-        padding-bottom: 100px;
-        /* padding: 20px; */
-        border-radius: 10px;
-        max-width: 50%; /* Adjust content width */
-        z-index: 10;
-        padding: 20px;
-        border-radius: 12px;
-        opacity: 1;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur( .5rem ); /* Add a blur effect */
-        -webkit-backdrop-filter: blur(10px); /* Safari support */
-        border-radius: 12px; /* Match parent border radius */
-        
-      }
-      
-      .slide-content h2 {
-        font-size: 30px;
-        margin-bottom: 18px;
-      }
-      
-      .slide-content p {
-        font-size: 15px;
-        margin-bottom: 50px;
-      }
-      
-      .cta-button1 {
-        background-color: #96393F;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 1rem;
-        width: 85%;
-      }
-    
-      .arrow{
-        font-size: 22px;
-        height: 40px;
-        width: 40px;
-      }
-
-
   }
+
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .slide {
+    position: relative;
+    min-width: 100%;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 50vh; /* Half screen height */
+    display: block;
+    object-fit: cover;
+  }
+
+  .slide-content {
+    position: absolute;
+    width: 100%;
+    top: 50%; /* Vertically centered in the half-screen */
+    left: 50%; /* Horizontally center */
+    transform: translate(-50%, -50%); /* Proper centering */
+    max-width: 80%; /* Content box width */
+    backdrop-filter: blur(8px); /* Apply blur effect */
+    -webkit-backdrop-filter: blur(8px); /* Safari support */
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center; /* Center text */
+  }
+
+  .slide-content h2 {
+    font-size: 40px; /* Adjust text size */
+    margin-bottom: 20px;
+  }
+
+  .slide-content p {
+    font-size: 23px; /* Adjust text size */
+    margin-bottom: 20px;
+  }
+
+  .cta-button1 {
+    width: 40%; /* Button width is 40% of the content */
+    padding: 12px 0;
+    margin: 0 auto; /* Center the button */
+    background-color: #D74658;
+    color: white;
+    border: 3px solid #F0C75B;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .cta-button1:hover {
+    background-color: #F0C75B;
+    border: 3px solid #D74658;
+  }
+
+  .arrow {
+    font-size: 28px; /* Larger arrow buttons for tablets */
+    height: 50px;
+    width: 50px;
+  }
+}
+
+
+
+
+
+
+/* phone */
 
   @media (max-width:580px)
   {

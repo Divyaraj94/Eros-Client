@@ -8,7 +8,7 @@ const Section = () => {
         <div className="sections-container">
             {/* Sweet Packaging Section */}
             <div className="section">
-                <div className="section-image">
+                <div className="section-image-left">
                     <img src={img1} alt="Sweet Packaging" />
                 </div>
                 <div className="section-content">
@@ -25,7 +25,7 @@ const Section = () => {
                     <p>Delight your loved ones with our exquisite namkeen gift bags.</p>
                     <button>View More</button>
                 </div>
-                <div className="section-image">
+                <div className="section-image-right">
                     <img src={img2} alt="Namkeen Hampers" />
                 </div>
             </div>

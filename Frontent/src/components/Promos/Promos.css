@@ -1,92 +1,132 @@
+/* Promos Section */
 .promos-container {
-    text-align: center;
-    padding: 2rem 1rem;
-    background-color: #f8f8f8;
-  }
-  
-  .slider-title {
-    font-size: 1.8rem;
-    color: #f3a400;
-    font-weight: bold;
-    margin-bottom: 1.5rem;
-  }
-  
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #f8f8f8;
+}
+
+.slider-title {
+  font-size: 1.8rem;
+  color: #f3a400;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.promo-card {
+  position: relative;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding-top: 90px;
+  text-align: center;
+  width: 100%;
+  max-width: 750px;
+  height: 150px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* Smooth sliding effect */
+.slide-animation {
+  transform: translateX(-10%);
+  opacity: 0;
+}
+
+.promo-card:not(.slide-animation) {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.promo-sticker {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: auto;
+  object-fit: contain;
+}
+
+/* Promo Stickers */
+.promo-sticker-1 {
+  width: 120px;
+  height: 110px;
+}
+
+.promo-sticker-2 {
+  width: 190px;
+  height: 110px; /* Increased height for uniformity */
+}
+
+.promo-sticker-3 {
+  width: 150px;
+  height: 100px;
+}
+
+/* Dots Navigation */
+.promo-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  gap: 10px;
+  position: relative;
+}
+
+.promo-dot {
+  width: 12px;
+  height: 12px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.promo-dot.active {
+  background-color: #f3a400;
+}
+
+/* Responsive Design */
+@media (max-width: 820px) {
   .promo-card {
-    position: relative;
-    background-color: #fff;
-    border-radius: 1rem;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    /* padding: 0px 0px; */
-    padding-top: 90px;
-    text-align: center;
-    width: 750px;
-    height: 150px;
-    margin: 50px auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+      width: 90%;
+      height: auto;
+      padding: 50px 20px;
   }
-  
-  /* Smooth sliding effect */
-  .slide-animation {
-    transform: translateX(-10%);
-    opacity: 0;
-  }
-  
-  /* After animation, make it visible again */
-  .promo-card:not(.slide-animation) {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  
   .promo-sticker {
-    position: absolute;
-    top: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    height: auto;
-    object-fit: contain;
+      width: 100px;
   }
-  
-  /* For the first promo sticker */
+}
+
+@media (max-width: 480px) {
+  .slider-title {
+      font-size: 1.5rem;
+  }
+  .promo-card {
+      padding: 40px 15px;
+  }
+  .promo-sticker {
+      top: -60px; /* Adjusted to move it higher */
+      width: 80px;
+  }
+
   .promo-sticker-1 {
-    width: 120px; /* First sticker's width */
-    height: 110px;
-  }
-  
-  /* For the second promo sticker */
-  .promo-sticker-2 {
-    width: 190px; /* Second sticker's width */
-  }
-  
-  /* For the third promo sticker */
-  .promo-sticker-3 {
-    width: 150px; /* Third sticker's width */
+    width: 100px; /* Increased size for consistency */
     height: 100px;
+}
+  .promo-sticker-2 {
+      width: 120px; /* Increased size for consistency */
+      height: 110px;
   }
-  
-  
-  /* dots1 below the card */
-  .dots1 {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;  /* Add spacing between the card and dots1 */
-    gap: 10px;  /* Space between dots1 */
-    position: relative;  /* Ensure dots1 stay below */
+
+  .promo-sticker-3 {
+    width: 100px; /* Increased size for consistency */
+    height: 110px;
+}
+  .promo-dot {
+      width: 10px;
+      height: 10px;
   }
-  
-  .dot1 {
-    width: 12px;
-    height: 12px;
-    background-color: #ccc;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .dot1.active {
-    background-color: #f3a400;
-  }
-  
+}

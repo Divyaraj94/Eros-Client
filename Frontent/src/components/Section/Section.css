@@ -15,7 +15,6 @@
     gap: 30px;
     width: 90%;
     margin: 0 auto;
-    /* padding: 25px; */
     border-radius: 12px;
     border: 2px solid rgba(242, 169, 169, 0.5);
     background-color: white;
@@ -23,17 +22,24 @@
 }
 
 /* Image Styling */
-.section-image {
+.section-image-left {
     flex: 1;
     display: flex;
     justify-content: left;
 }
 
-.section-image img {
+.section-image-right {
+    flex: 1;
+    display: flex;
+    justify-content: right;
+}
+
+.section-image-left img,
+.section-image-right img {
     width: 90%;
     height: 370px;
-    border-radius: 12px;
     object-fit: cover;
+    border-radius: 12px;
 }
 
 /* Text Content */
@@ -46,22 +52,23 @@
     color: #b81d39;
     font-size: 35px;
     font-weight: 700;
-    margin-bottom: 30px;
+    margin: 30px;
 }
 
 .section-content p {
     color: #5d3b4b;
     font-size: 20px;
     line-height: 1.6;
-    margin-bottom: 30px;
+    margin: 30px;
 }
 
 /* Button Styling */
-button {
+.section-content button {
     background-color: #D74658;
-    color: #F0C75B;
+    color: white;
     border: 2px solid #F0C75B;
     padding: 10px 40px;
+    margin: 30px;
     font-size: 16px;
     border-radius: 6px;
     cursor: pointer;
@@ -69,10 +76,28 @@ button {
 }
 
 button:hover {
-    background-color: #b81d39;
+    background-color: #F0C75B;
+    color: white;
+    border: 3px solid #D74658;
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .section {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .section-image-left img,
+    .section-image-right img {
+        width: 100%;
+        height: auto;
+        max-width: 450px;
+        border-radius: 12px;
+    }
+}
+
 @media (max-width: 768px) {
     .section {
         flex-direction: column;
@@ -80,7 +105,38 @@ button:hover {
         padding: 20px;
     }
 
-    .section-image img {
-        max-width: 300px;
+    .section-image-left img,
+    .section-image-right img {
+        max-width: 380px;
+        border-radius: 12px;
+    }
+
+    .section-content h2 {
+        font-size: 28px;
+    }
+
+    .section-content p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-content h2 {
+        font-size: 24px;
+    }
+
+    .section-content p {
+        font-size: 16px;
+    }
+
+    .section-content button {
+        padding: 8px 30px;
+        font-size: 14px;
+    }
+
+    .section-image-left img,
+    .section-image-right img {
+        max-width: 350px;
+        border-radius: 12px;
     }
 }

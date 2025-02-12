@@ -30,10 +30,24 @@ const Navbar = () => {
   return (
     <>
     <div className='offers'>
-      <h4>FREE Shipping now available on all orders over 1 KG!</h4>
+      {/* <h4>FREE Shipping now available on all orders over 1 KG!</h4> */}
+    <marquee> 
+      <span style={{ marginRight: "50px" }}>
+      <strong>FREE Shipping now available on all orders over 1 KG!</strong>
+    </span>
+    <span style={{ marginRight: "50px" }}>
+      <strong>FREE Shipping now available on all orders over 1 KG!</strong>
+    </span>
+    <span style={{ marginRight: "50px" }}>
+      <strong>FREE Shipping now available on all orders over 1 KG!</strong>
+    </span>
+    <span style={{ marginRight: "50px" }}>
+      <strong>FREE Shipping now available on all orders over 1 KG!</strong>
+    </span>
+  </marquee>
     </div>
-      <header className="header">
-        <div className="logo">
+      <header className="header1">
+        <div className="logo1">
           <img src={img1} alt="logo" />
         </div>
         <div className="menu-bar">
