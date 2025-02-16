@@ -17,6 +17,7 @@ import BestSellers from './pages/Shop/components/BestSellers';
 import CategoryProducts from './pages/Shop/components/CategoryProducts';
 import TopBar from './pages/Shop/components/TopBar';
 import CartSidebar from './pages/Shop/components/CartSidebar';
+import NavBar_Footer from './components/Navbar/NavBar_New';
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
     //   <Section />
     //   <Our_Collection />
     //   <Footer /> */}
-    //   <CorporateCollection />
+    //   <NavBar_Footer />
     // </div>
 
     <div className='App'>

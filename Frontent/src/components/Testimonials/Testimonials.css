@@ -5,26 +5,25 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-  }
-  
-  .testimonials-heading {
+}
+
+.testimonials-heading {
     text-align: center;
     font-size: 2rem;
     font-weight: bold;
-    /* background-color: #fff8f2; */
     color: #d9a404;
     margin: 40px 0px;
     position: relative;
     z-index: 1; /* Keeps the heading above the background */
-  }
-  
-  .testimonials-container {
+}
+
+.testimonials-container {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .testimonial-box {
+}
+
+.testimonial-box {
     background: rgba(255, 255, 255, 0.8); /* Light background with some transparency */
     padding: 20px;
     height: 200px; /* Fixed height for the testimonial box */
@@ -36,41 +35,40 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Ensures space between content and nav buttons */
-  }
-  
-  .testimonial-content {
+}
+
+.testimonial-content {
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
-  }
-  
-  .fade-out {
+}
+
+.fade-out {
     opacity: 0; /* Fade out */
-  }
-  
-  .fade-in {
+}
+
+.fade-in {
     opacity: 1; /* Fade in */
-  }
-  
-  .testimonial-text,
-  .testimonial-name {
+}
+
+.testimonial-text,
+.testimonial-name {
     font-size: 20px;
     color: #333; /* Dark text color for readability */
-  }
-  
-  .testimonial-name {
+}
+
+.testimonial-name {
     font-weight: bold;
     color: #d9a404;
-  }
-  
-  .testimonial-navigation {
+}
+
+.testimonial-navigation {
     display: flex;
     justify-content: center;
-    /* position: absolute;   */
     bottom: 20px; /* Keep buttons at the bottom */
     width: 100%; /* Ensure buttons take up full width */
-  }
-  
-  .nav-btn {
+}
+
+.nav-btn {
     background: #D74658;
     height: 50px;
     width: 50px;
@@ -85,9 +83,105 @@
     align-items: center;
     justify-content: center;
     transition: background 0.3s ease;
-  }
-  
-  .nav-btn:hover {
+}
+
+.nav-btn:hover {
     background: #F0C75B;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .testimonials-section {
+      padding: 100px 0;
   }
-  
+
+  .testimonial-box {
+      width: 70%;
+      height: 200px; /* Fixed height */
+      padding: 30px;
+      position: relative; /* Ensure proper positioning */
+  }
+
+  .testimonial-text,
+  .testimonial-name {
+      font-size: 18px;
+  }
+
+  .testimonial-navigation {
+      position: absolute;
+      bottom: 10px; /* Fix navigation buttons at the bottom */
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonials-section {
+      padding: 80px 0;
+  }
+
+  .testimonial-box {
+      width: 80%;
+      height: 200px;
+      padding: 25px;
+      position: relative;
+  }
+
+  .testimonial-text,
+  .testimonial-name {
+      font-size: 16px;
+  }
+
+  .nav-btn {
+      height: 40px;
+      width: 40px;
+      font-size: 24px;
+  }
+
+  .testimonial-navigation {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+  }
+}
+
+@media (max-width: 576px) {
+  .testimonials-section {
+      padding: 60px 0;
+  }
+
+  .testimonials-heading {
+      font-size: 1.5rem;
+  }
+
+  .testimonial-box {
+      width: 95%;
+      height: 170px;
+      padding: 20px;
+      position: relative;
+  }
+
+  .testimonial-text,
+  .testimonial-name {
+      font-size: 14px;
+      
+  }
+
+  .nav-btn {
+      height: 35px;
+      width: 35px;
+      font-size: 20px;
+  }
+
+  .testimonial-navigation {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+  }
+}
+

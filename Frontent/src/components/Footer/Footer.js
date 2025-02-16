@@ -12,6 +12,14 @@ import gpayIcon from "../assets/gpay.png";
 import paytmIcon from "../assets/paytm.png";
 
 const Footer = () => {
+
+  const scrollToTop = () => {
+    document.querySelector('body').scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  };
+
   return (
     <footer className="footer">
       {/* Sticker on top-right */}
@@ -48,8 +56,9 @@ const Footer = () => {
         <div className="footer-section">
           <h3>Quick Links</h3>
           <ul>
-            <li>Home</li>
-            <li>Shop</li>
+          <li onClick={scrollToTop}>Home</li>
+
+            <li onClick={scrollToTop}>Shop</li>
             <li>About Us</li>
             <li>Contact Us</li>
             <li>Promo Codes</li>

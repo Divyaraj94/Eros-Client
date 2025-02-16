@@ -330,52 +330,58 @@ input:checked + .toggle-slider:before {
 
 /* For phone view (smaller than 576px) */
 @media (max-width: 576px) {
-    .pickup-input-box {
-        width: 90%;  /* Input box takes more width on phone */
-        margin: 10px auto;
+
+    .line {
+        flex-direction: column; /* Stack vertically */
+        gap: 15px; /* Add space between elements */
+        align-items: center; /* Center content */
     }
 
     .location-button {
-        width: 90%;  /* Button also takes more width */
-        font-size: 16px;
+        width: 90%; /* Full-width for better touch */
     }
 
-    /* Centering content for phone view */
-    .next-section-top {
-        padding: 15px;
-        text-align: center;
+    .pickup-input-box {
+        width: 90%; /* Full-width for input */
     }
 
-    .line {
-        flex-direction: column;  /* Stack the button and input box */
-        gap: 15px;
+    .next-section-heading h2 {
+        font-size: 21px;
     }
-    
-    /* Additional adjustments for bottom content (features section) */
+
+    .next-section-heading p {
+        font-size: 18px;
+        max-width: 92%;
+    }
     .next-section-features {
         flex-direction: column;
-        gap: 20px;
-        text-align: center;
-        padding: 10px;
+        align-items: center;
     }
-    
+
+    /* Move image to the top */
+    .feature-image-container {
+        order: -1;
+        width: 100%;
+    }
+
+    /* Arrange feature cards in two columns */
     .feature-column {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Two in a row */
+        gap: 15px;
         width: 100%;
+        text-align: center;
     }
-    
+
+    /* Adjust text size */
     .feature-card h3 {
-        font-size: 22px;
+        margin-bottom: 10px;
+        font-size: 18px; /* Reduce heading font size */
     }
-    
+
     .feature-card p {
-        font-size: 16px;
-    }
-    
-    /* Ensure feature image remains responsive */
-    .feature-image {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
+        font-size: 14px; /* Reduce paragraph font size */
     }
 }
+
 

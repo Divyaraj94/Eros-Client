@@ -1,111 +1,182 @@
-/* General Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Arial', sans-serif;
-  }
-  
-  /* Featured Products Section */
-  .featured-products-BestSeller {
-    padding: 4rem 2rem;
-    text-align: center;
-    background-color: #F2F2F2; /* White */
-    margin-top: 20px;
-  }
-  
-  .featured-products-BestSeller h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: #F0C75B;
-    margin-bottom: 40px;
-  }
-  
-  .product-card-BestSeller {
-    display: inline-block;
-    width: 325px;
-    background-color: #FFFFFF;
-    color: #935f3e;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 12px;
-    text-align: center;
-    padding: 1.5rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .product-card-BestSeller:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  }
-  
-  .product-card-BestSeller img {
-    width: 280px;
-    height: 280px;
-    border-radius: 10px;
-    margin-bottom: 1rem;
-  }
-  
-  .product-card-BestSeller h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .product-card-BestSeller p {
-    font-size: 1.2rem;
-    color: #6D6D6D; /* Soft Gray */
-    margin-bottom: 1rem;
-  }
-  
-  .add-to-cart-btn {
-    background-color: #FFB6C1; /* Soft Pink */
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 30px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .add-to-cart-btn:hover {
-    background-color: #B8E0D2; /* Mint Green */
-  }
-  
-  .heading{
-    width: 100%;
-    text-align: center;
-    padding: 50px;
-  }
 
-  .heading h2{
-    color: #F0C75B;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
 
-  .heading p{
-    font-size: 20px;
-    margin-bottom: 20px;
-  }
-
-  .heading button{
-    background-color: #D74658;
-    color: white;
-    border: 2px solid #F0C75B;
-    padding: 10px 40px;
-    margin: 30px;
-    font-size: 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-
-  button:hover {
-    background-color: #F0C75B;
-    color: white;
-    border: 3px solid #D74658;
+/* Featured Products Section */
+.featured-products-BestSeller {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #F2F2F2;
+  margin-top: 20px;
 }
+
+.featured-products-BestSeller h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #F0C75B;
+}
+
+/* Product Cards Grid */
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.product-card-BestSeller {
+  width: 325px;
+  background-color: #FFFFFF;
+  color: #935f3e;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card-BestSeller:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.product-card-BestSeller img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.product-card-BestSeller h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.product-card-BestSeller p {
+  font-size: 1.2rem;
+  color: #6D6D6D;
+  margin-bottom: 1rem;
+}
+
+.add-to-cart-btn {
+  background-color: #FFB6C1;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #B8E0D2;
+}
+
+/* Heading Section */
+.heading {
+  width: 100%;
+  text-align: center;
+  padding: 50px;
+}
+
+.heading h2 {
+  color: #F0C75B;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.heading p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.heading button {
+  background-color: #D74658;
+  color: white;
+  border: 2px solid #F0C75B;
+  padding: 10px 40px;
+  margin: 30px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #F0C75B;
+  color: white;
+  border: 3px solid #D74658;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .featured-products-BestSeller h2 {
+    font-size: 2rem;
+  }
+
+  .product-card-BestSeller {
+    width: 280px;
+  }
+}
+
+/* Tablets: Two cards per row */
+@media (max-width: 768px) {
+  .products-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 20px; /* Adjust spacing */
+    justify-content: center;
+    padding: 0 20px;
+  }
+
+  .product-card-BestSeller {
+    width: 100%; /* Adjust width for grid */
+    max-width: 350px; /* Prevent excessive stretching */
+    margin: 0 auto;
+  }
+
+  .heading h2 {
+    font-size: 2rem;
+  }
+
+  .heading p {
+    font-size: 18px;
+  }
+
+  .heading button {
+    padding: 8px 25px;
+    font-size: 14px;
+  }
+}
+
+/* Phones: One card per row */
+@media (max-width: 576px) {
+  .products-container {
+    grid-template-columns: repeat(2, 1fr); /* 1 column */
+    gap: 15px;
+  }
+
+  .product-card-BestSeller {
+    width: 160px;
+    /* max-width: 300px; */
+    /* padding: 1rem; */
+    padding: 0px;
+  }
+
+  .product-card-BestSeller h3 {
+    font-size: 18px;
+    padding-bottom: 10px;
+  }
+
+
+
+
+  .heading p {
+    font-size: 15px;
+  }
+
+  .heading button {
+    padding: 7px 20px;
+    font-size: 12px;
+  }
+}
+

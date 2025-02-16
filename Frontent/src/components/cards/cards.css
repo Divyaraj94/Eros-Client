@@ -1,9 +1,3 @@
-/* General Styles */
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #F8F8F8;
-}
-
 /* Featured Products Section */
 .cards-featured-products {
   padding: 40px 20px;
@@ -70,12 +64,41 @@ body {
 @media (max-width: 768px) {
   .cards-products-container {
     grid-template-columns: repeat(2, 1fr);
-    
+    margin: 0px 50px; /* Reduce margin for better fit */
+    gap: 20px; /* Slightly reduce gap */
+  }
+
+  .cards-product-card img {
+    width: 200px; /* Reduce image size for better layout */
+    height: 230px;
   }
 }
 
 @media (max-width: 480px) {
+  .cards-featured-products {
+    padding: 20px 10px; /* Reduce padding */
+  }
+
+  .cards-title {
+    font-size: 2rem; /* Make title smaller */
+  }
+
   .cards-products-container {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cards-product-card {
+    padding: 0px;
+  }
+
+  .cards-product-card img {
+    width: 160px; /* Further reduce image size */
+    height: 150px;
+  }
+
+  .cards-product-title{
+    font-size: 18px;
+    padding-bottom: 11px;
   }
 }
+

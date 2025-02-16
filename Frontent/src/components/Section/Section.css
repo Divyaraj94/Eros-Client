@@ -121,22 +121,44 @@ button:hover {
 }
 
 @media (max-width: 480px) {
+
+    .section {
+        flex-direction: column;
+    }
+    
+    .section:nth-child(2) {
+        flex-direction: column-reverse;
+    }
+
+    .section-image-left img,
+.section-image-right img {
+    width: 100%;
+
+    object-fit: cover;
+    border-radius: 12px;
+}
+
     .section-content h2 {
-        font-size: 24px;
+        margin: 0%;
+        max-width: 90%;
+        font-size: 22px;
+        padding-bottom: 20px;
     }
 
     .section-content p {
-        font-size: 16px;
+        font-size: 17px;
+        /* margin-top: 30px 0px 0px 0px; */
+        margin: 0%;
     }
 
     .section-content button {
-        padding: 8px 30px;
+        /* padding: 8px 30px; */
         font-size: 14px;
     }
 
     .section-image-left img,
     .section-image-right img {
-        max-width: 350px;
+        max-width: 200%;
         border-radius: 12px;
     }
 }
