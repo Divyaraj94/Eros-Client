@@ -267,12 +267,7 @@ const NavBar_Footer = () => {
             </NavLink>
             <a
               href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                setShowModal(true);
-              }}
-              className="link"
-            >
+              onClick={(e) => {e.preventDefault(); setShowModal(true);}} className="link">
               Bulk Inquiry
             </a>
           </div>
