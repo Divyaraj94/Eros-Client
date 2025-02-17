@@ -55,8 +55,9 @@
   width: 70px;
 }
 .navbar_links{
+  font-size: 18px;
   display: flex;
-  gap: 30px;
+  gap: 60px;
 }
 .link{
   text-decoration: none;
@@ -70,6 +71,104 @@
   color: var(--c2);
   font-weight: bold;
 }
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal Content */
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  max-width: 90%;
+}
+
+/* Heading */
+.modal-content h2 {
+  margin-bottom: 10px;
+  color: black;
+}
+
+/* Phone Number */
+.contact-number {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* WhatsApp Button */
+.whatsapp-button {
+  background-color: #25D366;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: bold;
+  transition: 0.3s ease;
+  width: 100%;
+  max-width: 250px;
+}
+
+.whatsapp-button:hover {
+  background-color: #1da851;
+}
+
+/* Divider */
+.divider {
+  margin: 10px 0;
+  font-weight: bold;
+  color: grey;
+}
+
+/* Close Button */
+.close-button {
+  background: red;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+  width: 100%;
+  max-width: 250px;
+}
+
+.close-button:hover {
+  background: darkred;
+}
+
+/* Responsive */
+@media (max-width: 820px) {
+  .modal-content {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .whatsapp-button, .close-button {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+
+  .contact-number {
+    font-size: 14px;
+  }
+}
+
 
 /* Search Section  */
 
