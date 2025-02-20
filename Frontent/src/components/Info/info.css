@@ -69,10 +69,6 @@
     align-items: center;
 }
 
-.location-button:hover {
-    background-color: #d32f2f;
-}
-
 .pickup-input-box {
     border: none;
     border-bottom: 1px solid #6b7280;
@@ -258,10 +254,10 @@ input:checked + .toggle-slider:before {
     border-radius: 5px;
 }
 
-.cta-button:hover {
+/* .cta-button:hover {
     background: #F0C75B;
     border: 3px solid #D74658;
-}
+} */
 
 /* Error Message */
 .error-message {

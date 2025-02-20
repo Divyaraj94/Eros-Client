@@ -101,7 +101,7 @@
   transition: 0.3s;
 }
 
-button:hover {
+.heading button:hover {
   background-color: #F0C75B;
   color: white;
   border: 3px solid #D74658;

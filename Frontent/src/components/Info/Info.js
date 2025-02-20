@@ -92,7 +92,7 @@ const Info = () => {
             You have to collect the order from the outlet
           </p>
           <div className="line2">
-            <div>Get Deleivered</div>
+            <div>Get Delivery</div>
             <div className="toggle-switch">
               <input
                 type="checkbox"

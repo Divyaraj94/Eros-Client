@@ -1,9 +1,14 @@
-// src/components/CategoryProducts.jsx
 import React, { useState, useEffect } from "react";
 import "../style/Shop.css";
 
-const CategoryProducts = ({ products, selectedCategory, onAddToCart }) => {
+const CategoryProducts = ({
+  products,
+  selectedCategory,
+  onAddToCart,
+  categories,
+}) => {
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [selectedWeights, setSelectedWeights] = useState({});
 
   useEffect(() => {
     if (selectedCategory === 0) {
@@ -16,33 +21,92 @@ const CategoryProducts = ({ products, selectedCategory, onAddToCart }) => {
     }
   }, [products, selectedCategory]);
 
+  // Get the category name from the categories list (if available)
+  const categoryName =
+    categories?.find((cat) => cat.id === selectedCategory)?.name ||
+    "All Products";
+
+  // Handle weight selection
+  const handleWeightSelect = (productId, weight) => {
+    setSelectedWeights((prev) => ({
+      ...prev,
+      [productId]: weight,
+    }));
+  };
+
   if (!filteredProducts || filteredProducts.length === 0) {
     return <p>No products available</p>;
   }
 
   return (
-    <div className="category-1">
-      {filteredProducts.slice(0, 2).map((product) => (
-        <div key={product.id} className="product-card-rect">
-          <div className="product-image-rect">
-            <img src={product.image} alt={product.name} />
-            <button className="addToCart" onClick={() => onAddToCart(product)}>
-              Add
-            </button>
-          </div>
-          <div className="product-details-rect">
-            <h3 className="product-name">{product.name}</h3>
-            <p className="product-price">₹{product.price}</p>
-            {product.weightOptions && (
-              <div className="weight-options">
-                {product.weightOptions.map((weight) => (
-                  <button key={weight}>{weight}</button>
-                ))}
+    <div className="category-container">
+      <h2 className="category-heading">{categoryName}</h2>{" "}
+      {/* Dynamic Category Heading */}
+      <div className="category-1">
+        {filteredProducts.map((product) => (
+          <div key={product.id} className="product-card-rect">
+            <div className="product-details-rect">
+              <div className="left-section">
+                <h3 className="product-name">{product.name}</h3>
+                <div className="product-rating">
+                  {Array.from({ length: 5 }, (_, index) => (
+                    <span
+                      key={index}
+                      className={
+                        index < product.rating ? "filled-star" : "empty-star"
+                      }
+                    >
+                      ★
+                    </span>
+                  ))}
+                </div>
+                <p className="product-price">₹{product.price}</p>
+                <p className="product-description">{product.description}</p>
+
+                {/* Weight Selection Logic */}
+                {product.weightOptions && (
+                  <div className="weight-options-product">
+                    {product.weightOptions.map((weight) => (
+                      <button
+                        key={weight}
+                        className={`weight-btn-product
+                         ${
+                          selectedWeights[product.id] === weight ? "active" : ""
+                        }`}
+                        onClick={() => handleWeightSelect(product.id, weight)}
+                      >
+                        {weight}
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
-            )}
+
+              <div className="right-section">
+                <div className="image-container">
+                  <img src={product.image} alt={product.name} />
+                  <button
+                    className="addToCart"
+                    onClick={() =>
+                      onAddToCart({
+                        ...product,
+                        selectedWeight:
+                          selectedWeights[product.id] ||
+                          product.weightOptions?.[0],
+                      })
+                    }
+                  >
+                    Add +
+                  </button>
+                </div>
+                {product.customize && (
+                  <p className="customize-text">Customize the item</p>
+                )}
+              </div>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

@@ -75,11 +75,11 @@
     transition: 0.3s;
 }
 
-button:hover {
+/* button:hover {
     background-color: #F0C75B;
     color: white;
     border: 3px solid #D74658;
-}
+} */
 
 /* Responsive Design */
 @media (max-width: 1024px) {

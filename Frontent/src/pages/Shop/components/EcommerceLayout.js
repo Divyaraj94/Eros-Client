@@ -65,30 +65,32 @@ const EcommerceLayout = () => {
   };
 
   const onAddToCart = (product) => {
-    // Add item to cart with quantity 1 by default
     setCartItems((prevItems) => {
-      const existingItem = prevItems.find((item) => item.id === product.id);
+      // Find an existing item with the same ID AND the same weight
+      const existingItem = prevItems.find(
+        (item) => item.id === product.id && item.selectedWeight === product.selectedWeight
+      );
+  
       if (existingItem) {
+        // If the item with the same weight exists, just increase quantity
         return prevItems.map((item) =>
-          item.id === product.id
+          item.id === existingItem.id && item.selectedWeight === existingItem.selectedWeight
             ? { ...item, quantity: item.quantity + 1 }
             : item
         );
       } else {
+        // Otherwise, add a new item with the selected weight
         return [
           ...prevItems,
           {
             ...product,
             quantity: 1,
-            // If the product has weightOptions, pick the first by default
-            selectedWeight: product.weightOptions
-              ? product.weightOptions[0]
-              : "",
           },
         ];
       }
     });
   };
+  
 
   const onIncrease = (id) => {
     setCartItems((prevItems) =>

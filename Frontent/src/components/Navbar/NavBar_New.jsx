@@ -510,10 +510,13 @@ const NavBar_Footer = () => {
                 <option value="all" selected>
                   All Categories
                 </option>
-                <option value="special cakes">Special Cakes</option>
-                <option value="nicol cakes">Nicol Cakes</option>
-                <option value="chocolate cakes">Chocolate Cakes</option>
-                <option value="cheese cakes">Cheese Cakes</option>
+                <option value="special cakes">All</option>
+                <option value="nicol cakes">Sweet</option>
+                <option value="chocolate cakes">Namkeen</option>
+                <option value="cheese cakes">Dry Fruits</option>
+                <option value="cheese cakes">Bakery</option>
+                <option value="cheese cakes">Chocolate</option>
+                <option value="cheese cakes">Others</option>
               </select>
             </div>
           </div>

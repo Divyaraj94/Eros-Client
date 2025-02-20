@@ -1,16 +1,17 @@
 .login_button{
     background-color: transparent;
-    border: 3px solid var(--c2);
+    border: 3px solid var(--c1);
     padding: 12px 30px;
     border-radius: 8px;
     font-size: 14px;
-    font-weight: 500;
-    color: var(--c2);
-    transition: 0.3s;
+    font-weight: 600;
+    color: var(--c1);
+    transition: 0.3s all ease;
   }
   .login_button:hover{
-    background-color: var(--c2);
+    background-color: var(--c1);
     color: white;
+    font-weight: bolder;
   }
   .login_button:active{
     background-color: #cf3e2b;

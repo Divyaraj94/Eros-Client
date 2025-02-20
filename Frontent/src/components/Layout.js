@@ -15,7 +15,7 @@ const Layout = () => {
       {/* WhatsApp button */}
       <a
         href="https://wa.me/1234567890?text=Hello%20I%20want%20to%20inquire%20about%20bulk%20orders"
-        target="_blank"
+        target="_blank" 
         rel="noopener noreferrer"
         className="whatsapp-btn2"
       >

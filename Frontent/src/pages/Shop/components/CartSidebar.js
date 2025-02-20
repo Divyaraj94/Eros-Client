@@ -1,5 +1,5 @@
 // src/components/CartSidebar.jsx
-import React from "react";
+import React, { useState } from "react";
 import "../style/Shop.css";
 
 const CartSidebar = ({
@@ -9,10 +9,18 @@ const CartSidebar = ({
   deliveryOption,
   setDeliveryOption,
 }) => {
-  // const subtotal = cartItems.reduce(
-  //   (sum, item) => sum + item.price * item.quantity,
-  //   0
-  // );
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalType, setModalType] = useState("");
+
+  const handleToggleClick = (option) => {
+    setModalType(option);
+    setIsModalOpen(true);
+  };
+
+  const handleConfirm = () => {
+    setDeliveryOption(modalType);
+    setIsModalOpen(false);
+  };
 
   const subtotal = (cartItems || []).reduce(
     (sum, item) => sum + item.price * item.quantity,
@@ -21,40 +29,32 @@ const CartSidebar = ({
 
   return (
     <div className="cart-sidebar">
-      <div className="cart-header">
-        <h2>Your Cart</h2>
-        <div className="cart-toggle">
-          <button
-            className={deliveryOption === "delivery" ? "active" : ""}
-            onClick={() => setDeliveryOption("delivery")}
-          >
-            <span role="img" aria-label="delivery">
-              🚚
-            </span>{" "}
-            Delivery
-          </button>
-          <button
-            className={deliveryOption === "pickup" ? "active" : ""}
-            onClick={() => setDeliveryOption("pickup")}
-          >
-            <span role="img" aria-label="pickup">
-              🏠
-            </span>{" "}
-            Pick-up
-          </button>
-        </div>
+      <h2>Your Cart</h2>
+
+      <div className="cart-toggle">
+        <button
+          className={`toggle-Delivery ${deliveryOption === "delivery" ? "active" : ""}`}
+          onClick={() => handleToggleClick("delivery")}
+        >
+          Delivery <span className="delivery-time"><br />(1 hour)</span>
+        </button>
+        <button
+          className={`toggle-Delivery ${deliveryOption === "pickup" ? "active" : ""}`}
+          onClick={() => handleToggleClick("pickup")}
+        >
+          Pick Up
+        </button>
       </div>
 
       <div className="cart-items">
         {(cartItems || []).map((item) => (
           <div key={item.id} className="cart-item">
-            <p>
-              {item.name}
-              {item.selectedWeight ? ` (${item.selectedWeight})` : ""}
-            </p>
-            <p>
-              ₹{item.price} x {item.quantity} = ₹{item.price * item.quantity}
-            </p>
+            <div className="cart-item-info">
+              <p className="cart-item-name">{item.name} {item.selectedWeight && `[${item.selectedWeight}]`}</p>
+              <p className="cart-item-price">
+                {item.quantity} × ₹{item.price} = ₹{item.price * item.quantity}
+              </p>
+            </div>
             <div className="quantity-controls">
               <button onClick={() => onDecrease(item.id)}>-</button>
               <span>{item.quantity}</span>
@@ -64,9 +64,28 @@ const CartSidebar = ({
         ))}
       </div>
 
-      <hr />
-      <p className="subtotal">Subtotal: ₹{subtotal}</p>
-      <button className="checkout-button">Checkout ₹{subtotal}</button>
+      <p className="subtotal">
+        Subtotal <span className="subtotal-amount">₹{subtotal}.00</span>
+      </p>
+      <button className="checkout-button">
+        Checkout <span className="checkout-amount">₹{subtotal}.00</span>
+      </button>
+
+      {isModalOpen && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <h3>{modalType === "delivery" ? "Delivery Order" : "Pickup Order"}</h3>
+            <img src={modalType === "delivery" ? "/delivery.png" : "/pickup.png"} alt="Order Type" />
+            <p>Lorem ipsum refers to placeholder text often used in publishing.</p>
+            <div className="modal-buttons">
+              <button className="cancel-button" onClick={() => setIsModalOpen(false)}>Cancel</button>
+              <button className="confirm-button" onClick={handleConfirm}>
+                {modalType === "delivery" ? "Confirm Delivery" : "Confirm Pickup"}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

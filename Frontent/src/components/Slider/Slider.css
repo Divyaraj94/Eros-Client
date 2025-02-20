@@ -46,7 +46,7 @@
     margin-bottom: 50px;
   }
   
-  .cta-button1 {
+   .hover_button{
     background-color: #D74658;
     border: 3px solid #F0C75B;
     color: white;
@@ -57,10 +57,10 @@
     width: 300px;
   }
   
-  .cta-button:hover {
+  /* .cta-button1:hover {
     background-color: #F0C75B;
     border: 3px solid #D74658;
-  }
+  } */
   
   .arrow {
     position: absolute;

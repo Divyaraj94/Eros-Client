@@ -45,7 +45,7 @@
   display: none;
 }
 .responsive_navbar_links .active{
-  color: var(--c2);
+  color: var(--c1);
   font-weight: bold;
 }
 .navbar_logo{
@@ -65,10 +65,10 @@
   transition: 0.2s;
 }
 .link:hover{
-  color: var(--c2);
+  color: var(--c1);
 }
 .navbar_links .active{
-  color: var(--c2);
+  color: var(--c1);
   font-weight: bold;
 }
 
@@ -152,6 +152,8 @@
   background: darkred;
 }
 
+ 
+
 /* Responsive */
 @media (max-width: 820px) {
   .modal-content {
@@ -202,6 +204,10 @@
 }
 .search input:focus{
   outline: none;
+}
+
+#search-filter{
+  height: 40px;
 }
 .search_filter_dropdown{
   display: flex;

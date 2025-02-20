@@ -76,7 +76,7 @@ const Slider = () => {
             <div className="slide-content" style={{ color: slide.colors }}>
               <h2>{slide.mainText}</h2>
               <p>{slide.subText}</p>
-              <button className="cta-button1">{slide.ctaText}</button>
+              <button className="hover_button">{slide.ctaText}</button>
             </div>
           </div>
         ))}

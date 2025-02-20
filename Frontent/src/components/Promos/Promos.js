@@ -54,17 +54,17 @@ const Promos = () => {
   };
 
   return (
-    <div className="promos-container">
-      <h2 className="slider-title">Promos</h2>
+    <div className="promos-container-Home">
+      <h2 className="slider-title-Home">Promos</h2>
 
-      <div className={`promo-card ${isSliding ? "slide-animation" : ""}`}>
+      <div className={`promo-card-Home ${isSliding ? "slide-animation-Home" : ""}`}>
   <img
     src={promos[currentIndex].image}
     alt={promos[currentIndex].title}
-    className={`promo-sticker promo-sticker-${currentIndex + 1}`} // Dynamically add a class based on index
+    className={`promo-sticker-Home promo-sticker-Home-${currentIndex + 1}`} // Dynamically add a class based on index
   />
-  <h3 className="promo-title">{promos[currentIndex].title}</h3>
-  <p className="promo-description">{promos[currentIndex].description}</p>
+  <h3 className="promo-title-Home">{promos[currentIndex].title}</h3>
+  <p className="promo-description-Home">{promos[currentIndex].description}</p>
 </div>
 
 
