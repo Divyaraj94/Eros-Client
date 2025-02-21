@@ -65,12 +65,11 @@ const CategoryProducts = ({
 
                 {/* Weight Selection Logic */}
                 {product.weightOptions && (
-                  <div className="weight-options-product">
+                  <div className="weight-options">
                     {product.weightOptions.map((weight) => (
                       <button
                         key={weight}
-                        className={`weight-btn-product
-                         ${
+                        className={`weight-btn ${
                           selectedWeights[product.id] === weight ? "active" : ""
                         }`}
                         onClick={() => handleWeightSelect(product.id, weight)}

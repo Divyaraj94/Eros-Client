@@ -1,4 +1,3 @@
-// src/components/EcommerceLayout.jsx
 import React, { useState, useEffect } from "react";
 import "../style/Shop.css";
 
@@ -23,6 +22,12 @@ const EcommerceLayout = () => {
 
   const [cartItems, setCartItems] = useState([]);
   const [deliveryOption, setDeliveryOption] = useState("delivery");
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // For menu button
+  const [isCartVisible, setIsCartVisible] = useState(false); // For mobile cart
+
+  // Toggle functions
+  const toggleCart = () => setIsCartVisible(!isCartVisible);
+  const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
 
   // Fetch data
   useEffect(() => {
@@ -34,7 +39,6 @@ const EcommerceLayout = () => {
     };
     fetchData();
   }, []);
-  
 
   // Sorting logic
   useEffect(() => {
@@ -66,31 +70,20 @@ const EcommerceLayout = () => {
 
   const onAddToCart = (product) => {
     setCartItems((prevItems) => {
-      // Find an existing item with the same ID AND the same weight
       const existingItem = prevItems.find(
         (item) => item.id === product.id && item.selectedWeight === product.selectedWeight
       );
-  
       if (existingItem) {
-        // If the item with the same weight exists, just increase quantity
         return prevItems.map((item) =>
           item.id === existingItem.id && item.selectedWeight === existingItem.selectedWeight
             ? { ...item, quantity: item.quantity + 1 }
             : item
         );
       } else {
-        // Otherwise, add a new item with the selected weight
-        return [
-          ...prevItems,
-          {
-            ...product,
-            quantity: 1,
-          },
-        ];
+        return [...prevItems, { ...product, quantity: 1 }];
       }
     });
   };
-  
 
   const onIncrease = (id) => {
     setCartItems((prevItems) =>
@@ -112,8 +105,8 @@ const EcommerceLayout = () => {
 
   return (
     <div className="ecommerce-layout">
-      {/* LEFT COLUMN */}
-      <div className="left-column">
+      {/* LEFT COLUMN (Sidebar) */}
+      <div className={`left-column ${isSidebarOpen ? "open" : ""}`}>
         <LeftSidebar
           categories={categories}
           selectedCategory={selectedCategory}
@@ -129,9 +122,7 @@ const EcommerceLayout = () => {
       <div className="middle-column">
         <TopBar />
         <PromosSection />
-        {/* Pass the onAddToCart to BestSellers so it can add items to cart */}
         <BestSellers onAddToCart={onAddToCart} />
-        {/* Pass the filtered products & onAddToCart to CategoryProducts */}
         <CategoryProducts
           products={allProducts}
           selectedCategory={selectedCategory}
@@ -139,8 +130,8 @@ const EcommerceLayout = () => {
         />
       </div>
 
-      {/* RIGHT COLUMN */}
-      <div className="right-column">
+      {/* RIGHT COLUMN (Cart Sidebar - Hidden in Mobile) */}
+      <div className="right-column desktop-only">
         <CartSidebar
           cartItems={cartItems}
           onIncrease={onIncrease}
@@ -149,6 +140,54 @@ const EcommerceLayout = () => {
           setDeliveryOption={setDeliveryOption}
         />
       </div>
+
+      {/* MOBILE VIEW COMPONENTS */}
+      <div className="mobile-bottom-bar">
+        <button className="menu-button" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
+          ☰ Menu
+        </button>
+        <div className="cart-bar" style={{ display: isCartVisible ? "none" : "flex" }}>
+          <span>{cartItems.length} Items</span>
+          <button className="view-cart" onClick={() => setIsCartVisible(true)}>View Cart</button>
+        </div>
+        <div className="bottom-nav">
+          <button>🏠 Home</button>
+          <button>📦 Order</button>
+          <button>🛒 Cart</button>
+          <button>⭐ Brownie Points</button>
+        </div>
+      </div>  
+
+      {isSidebarOpen && (
+      <div className="mobile-menu-overlay" onClick={toggleSidebar}>
+        <div className="mobile-menu" onClick={(e) => e.stopPropagation()}>
+          <LeftSidebar
+            categories={categories}
+            selectedCategory={selectedCategory}
+            onSelectCategory={handleCategorySelect}
+            priceRange={priceRange}
+            setPriceRange={setPriceRange}
+            sortOption={sortOption}
+            setSortOption={setSortOption}
+          />
+        </div>
+      </div>
+    )}
+
+      {/* MOBILE CART (Appears from Bottom) */}
+      {isCartVisible && (
+        <div className="mobile-cart-overlay" onClick={() => setIsCartVisible(false)}>
+          <div className="mobile-cart" onClick={(e) => e.stopPropagation()}>
+            <CartSidebar
+              cartItems={cartItems}
+              onIncrease={onIncrease}
+              onDecrease={onDecrease}
+              deliveryOption={deliveryOption}
+              setDeliveryOption={setDeliveryOption}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
