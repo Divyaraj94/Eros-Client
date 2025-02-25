@@ -1,4 +1,15 @@
 
+:root{
+  --primary_font: 'poppins';
+  --heading_font: 'Margin DEMO';
+  --c1: #BD9B16;
+  --c2: #B81D39;
+  /* --c2: #7cce7c; */
+  --c3: #000000;
+  --c4: #ECECEC;
+  --c5: #FFFFFF;
+}
+
   .slider {
     position: relative;
     height: 100vh;
@@ -47,20 +58,20 @@
   }
   
    .hover_button{
-    background-color: #D74658;
-    border: 3px solid #F0C75B;
+    background-color: var(--c2);
+    border: 2px solid var(--c1);
     color: white;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
     font-size: 1rem;
-    width: 300px;
+    width: 60%;
+    transition: 0.2s ease-in, transform 0.2s ease-in-out;
   }
-  
-  /* .cta-button1:hover {
-    background-color: #F0C75B;
-    border: 3px solid #D74658;
-  } */
+
+  .hover_button:hover{
+    background-color: var(--c1);
+  }
   
   .arrow {
     position: absolute;
@@ -170,22 +181,16 @@
     margin-bottom: 20px;
   }
 
-  .cta-button1 {
-    width: 40%; /* Button width is 40% of the content */
-    padding: 12px 0;
-    margin: 0 auto; /* Center the button */
-    background-color: #D74658;
-    color: white;
-    border: 3px solid #F0C75B;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-  }
+.hover_button{
+  width: 90%;
+}
 
-  .cta-button1:hover {
+  .hover_button:hover {
     background-color: #F0C75B;
     border: 3px solid #D74658;
   }
+
+  
 
   .arrow {
     font-size: 28px; /* Larger arrow buttons for tablets */
@@ -252,15 +257,15 @@
           margin-bottom: 50px;
         }
         
-        .cta-button1 {
-          background-color: #96393F;
+        .hover_button {
+          background-color: #D74658;
           color: white;
           padding: 10px 20px;
-          border: none;
+          border: 2px solid #F0C75B;
           border-radius: 5px;
           cursor: pointer;
           font-size: 1rem;
-          width: 80%;
+          width: 90%;
         }
       
         .arrow{
@@ -268,11 +273,4 @@
           height: 30px;
           width: 30px;
         }
-
-
-      
-
-
-
-
   }

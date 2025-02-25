@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
-import "../style/Shop.css";
+import { NavLink } from "react-router-dom";
+import { FaHome, FaBox, FaShoppingBasket, FaStar } from "react-icons/fa";
 
+import "../style/Shop.css";
+import CartSidebar from "./CartSidebar";
 // Import your components
 import LeftSidebar from "./LeftSideBar";
 import TopBar from "./TopBar";
 import PromosSection from "./PromosSection";
 import BestSellers from "./BestSellers";
 import CategoryProducts from "./CategoryProducts";
-import CartSidebar from "./CartSidebar";
 
 // Import API calls
 import { fetchProducts, fetchCategories } from "../API/index";
@@ -151,11 +153,24 @@ const EcommerceLayout = () => {
           <button className="view-cart" onClick={() => setIsCartVisible(true)}>View Cart</button>
         </div>
         <div className="bottom-nav">
-          <button>🏠 Home</button>
-          <button>📦 Order</button>
-          <button>🛒 Cart</button>
-          <button>⭐ Brownie Points</button>
-        </div>
+      <NavLink to="/" className="nav-item">
+        <FaHome className="icon" />
+        <span>Home</span>
+      </NavLink>
+      <NavLink to="/shop" className="nav-item">
+        <FaBox className="icon" />
+        <span>Order</span>
+      </NavLink>
+      <NavLink to="/cart" className="nav-item">
+        <FaShoppingBasket className="icon cart-icon" />
+        <span>Cart</span>
+        <span className="cart-badge">1</span> {/* Example cart count */}
+      </NavLink>
+      <NavLink to="/rewards" className="nav-item">
+        <FaStar className="icon" />
+        <span>Brownie Points</span>
+      </NavLink>
+    </div>
       </div>  
 
       {isSidebarOpen && (

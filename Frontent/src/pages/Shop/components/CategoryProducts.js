@@ -39,16 +39,16 @@ const CategoryProducts = ({
   }
 
   return (
-    <div className="category-container">
-      <h2 className="category-heading">{categoryName}</h2>{" "}
+    <div className="category-container-shop">
+      <h2 className="category-heading-shop">{categoryName}</h2>{" "}
       {/* Dynamic Category Heading */}
-      <div className="category-1">
+      <div className="category-1-shop">
         {filteredProducts.map((product) => (
-          <div key={product.id} className="product-card-rect">
-            <div className="product-details-rect">
-              <div className="left-section">
-                <h3 className="product-name">{product.name}</h3>
-                <div className="product-rating">
+          <div key={product.id} className="product-card-rect-shop">
+            <div className="product-details-rect-shop">
+              <div className="left-section-shop">
+                <h3 className="product-name-shop">{product.name}</h3>
+                <div className="product-rating-shop">
                   {Array.from({ length: 5 }, (_, index) => (
                     <span
                       key={index}
@@ -60,16 +60,16 @@ const CategoryProducts = ({
                     </span>
                   ))}
                 </div>
-                <p className="product-price">₹{product.price}</p>
-                <p className="product-description">{product.description}</p>
+                <p className="product-price-shop">₹{product.price}</p>
+                <p className="product-description-shop">{product.description}</p>
 
                 {/* Weight Selection Logic */}
                 {product.weightOptions && (
-                  <div className="weight-options">
+                  <div className="weight-options-shop">
                     {product.weightOptions.map((weight) => (
                       <button
                         key={weight}
-                        className={`weight-btn ${
+                        className={`weight-btn-shop ${
                           selectedWeights[product.id] === weight ? "active" : ""
                         }`}
                         onClick={() => handleWeightSelect(product.id, weight)}
@@ -81,11 +81,11 @@ const CategoryProducts = ({
                 )}
               </div>
 
-              <div className="right-section">
-                <div className="image-container">
+              <div className="right-section-shop">
+                <div className="image-container-shop">
                   <img src={product.image} alt={product.name} />
                   <button
-                    className="addToCart"
+                    className="addToCart-shop"
                     onClick={() =>
                       onAddToCart({
                         ...product,
@@ -99,7 +99,7 @@ const CategoryProducts = ({
                   </button>
                 </div>
                 {product.customize && (
-                  <p className="customize-text">Customize the item</p>
+                  <p className="customize-text-shop">Customize the item</p>
                 )}
               </div>
             </div>

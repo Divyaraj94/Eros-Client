@@ -158,8 +158,8 @@ const Info = () => {
       </div>
 
       {/* Call-to-Action Button */}
-      <div className="cta-container">
-        <button className="cta-button">Know More</button>
+      <div className="know-more">
+        <button className="knowMore-button">Know More</button>
       </div>
     </div>
   );

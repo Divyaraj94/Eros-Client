@@ -15,13 +15,13 @@ const Promos = () => {
     {
       id: 2,
       title: "Festive Discounts",
-      description: "Up to 50% off this season",
+      description: "Use Code: SIGNUP10",
       image: image2,
     },
     {
       id: 3,
       title: "Buy 1 Get 1 Free",
-      description: "On select items",
+      description: "Use Code: COMBO11",
       image: image3,
     },
   ];
@@ -45,14 +45,6 @@ const Promos = () => {
     }, 500); // Smooth transition time
   };
 
-  const handleDotClick = (index) => {
-    setIsSliding(true);
-    setTimeout(() => {
-      setCurrentIndex(index);
-      setIsSliding(false);
-    }, 500);
-  };
-
   return (
     <div className="promos-container-Home">
       <h2 className="slider-title-Home">Promos</h2>
@@ -66,18 +58,6 @@ const Promos = () => {
   <h3 className="promo-title-Home">{promos[currentIndex].title}</h3>
   <p className="promo-description-Home">{promos[currentIndex].description}</p>
 </div>
-
-
-      {/* Dots below the card */}
-      <div className="dots1">
-        {promos.map((_, index) => (
-          <span
-            key={index}
-            className={`dot1 ${index === currentIndex ? "active" : ""}`}
-            onClick={() => handleDotClick(index)}
-          ></span>
-        ))}
-      </div>
     </div>
   );
 };

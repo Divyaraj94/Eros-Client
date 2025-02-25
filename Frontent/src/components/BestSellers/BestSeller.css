@@ -56,21 +56,6 @@
   margin-bottom: 1rem;
 }
 
-.add-to-cart-btn {
-  background-color: #FFB6C1;
-  color: white;
-  padding: 0.8rem 1.5rem;
-  border: none;
-  border-radius: 30px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.add-to-cart-btn:hover {
-  background-color: #B8E0D2;
-}
-
 /* Heading Section */
 .heading {
   width: 100%;
@@ -104,7 +89,7 @@
 .heading button:hover {
   background-color: #F0C75B;
   color: white;
-  border: 3px solid #D74658;
+  border: 2px solid #D74658;
 }
 
 /* Responsive Adjustments */
@@ -163,20 +148,20 @@
   }
 
   .product-card-BestSeller h3 {
-    font-size: 18px;
+    font-size: 16px;
     padding-bottom: 10px;
   }
 
-
-
-
+  .heading h2 {
+    font-size: 29px;
+  }
   .heading p {
     font-size: 15px;
   }
 
   .heading button {
-    padding: 7px 20px;
-    font-size: 12px;
+    padding: 12px 40px;
+    font-size: 15px;
   }
 }
 

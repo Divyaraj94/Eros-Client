@@ -25,9 +25,9 @@
 
 .testimonial-box {
     background: rgba(255, 255, 255, 0.8); /* Light background with some transparency */
-    padding: 20px;
-    height: 200px; /* Fixed height for the testimonial box */
-    width: 50%;
+    padding: 40px;
+    height: 250px; /* Fixed height for the testimonial box */
+    width: 65%;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     position: relative;
@@ -38,6 +38,7 @@
 }
 
 .testimonial-content {
+    align-items: center;
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
 }
@@ -53,6 +54,7 @@
 .testimonial-text,
 .testimonial-name {
     font-size: 20px;
+    padding-bottom: 10px;
     color: #333; /* Dark text color for readability */
 }
 
@@ -97,7 +99,7 @@
 
   .testimonial-box {
       width: 70%;
-      height: 200px; /* Fixed height */
+      height: 250px; /* Fixed height */
       padding: 30px;
       position: relative; /* Ensure proper positioning */
   }
@@ -109,7 +111,8 @@
 
   .testimonial-navigation {
       position: absolute;
-      bottom: 10px; /* Fix navigation buttons at the bottom */
+      padding-top: 30px;
+      bottom: 30px; /* Fix navigation buttons at the bottom */
       left: 50%;
       transform: translateX(-50%);
       display: flex;
@@ -159,7 +162,7 @@
 
   .testimonial-box {
       width: 95%;
-      height: 170px;
+      height: 180px;
       padding: 20px;
       position: relative;
   }

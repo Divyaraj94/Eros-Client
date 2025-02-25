@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./buttons.css";
 import "./Navbar_New.css";
 import Logo from "../assets/logo.png";
+import { FaSearch } from "react-icons/fa";
+import { LuCircleArrowOutDownLeft } from "react-icons/lu";
 import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
 // import Location_icon from '../assets/address_location_icon.png'
 // import Phone_icon from '../assets/phone_icon.png'
@@ -13,159 +15,6 @@ import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
 import no_results_found_png from "../assets/logo.png";
 
 const NavBar_Footer = () => {
-  const dummyItems = [
-    {
-      name: "Forrero Rocher Cake",
-      category: "special cake",
-      img: "https://ocakes.in/hyderabad/storage/app/public/images/item/item-642f4a69991a2.jpg",
-    },
-    {
-      name: "Chocolate Cake",
-      category: "special cake",
-      img: "https://ocakes.in/hyderabad/storage/app/public/images/item/item-642f4a69991a2.jpg",
-    },
-    {
-      name: "Vanilla Cake",
-      category: "special cake",
-      img: "https://ocakes.in/hyderabad/storage/app/public/images/item/item-642f4a69991a2.jpg",
-    },
-    {
-      name: "Pound Cake",
-      category: "special cake",
-      img: "https://ocakes.in/hyderabad/storage/app/public/images/item/item-642f4a69991a2.jpg",
-    },
-    {
-      name: "Sponge Cake",
-      category: "nicol cake",
-      img: "https://ocakes.in/hyderabad/storage/app/public/images/item/item-642f4a69991a2.jpg",
-    },
-    {
-      name: "Carrot Cake",
-      category: "nicol cake",
-      img: "https://ocakes.in/hyderabad/storage/app/public/images/item/item-642f4a69991a2.jpg",
-    },
-    {
-      name: "Red Velvet Cake",
-      category: "nicol cake",
-      img: "https://ocakes.in/hyderabad/storage/app/public/images/item/item-642f4a69991a2.jpg",
-    },
-    {
-      name: "Fruit Cake",
-      category: "nicol cake",
-      img: "https://ocakes.in/hyderabad/storage/app/public/images/item/item-642f4a69991a2.jpg",
-    },
-    {
-      name: "Tiramisu",
-      category: "chocolate cake",
-      img: "https://ocakes.in/hyderabad/storage/app/public/images/item/item-642f4a69991a2.jpg",
-    },
-    {
-      name: "Cheesecake",
-      category: "chocolate cake",
-      img: "https://ocakes.in/hyderabad/storage/app/public/images/item/item-642f4a69991a2.jpg",
-    },
-    {
-      name: "Aayushi Cake",
-      category: "chocolate cake",
-      img: "https://ocakes.in/hyderabad/storage/app/public/images/item/item-642f4a69991a2.jpg",
-    },
-    {
-      name: "bakery",
-      category: "chocolate cake",
-      img: "https://ocakes.in/hyderabad/storage/app/public/images/item/item-642f4a69991a2.jpg",
-    },
-    {
-      name: "ravi",
-      category: "chocolate cake",
-      img: "https://ocakes.in/hyderabad/storage/app/public/images/item/item-642f4a69991a2.jpg",
-    },
-    {
-      name: "pvp",
-      category: "chocolate cake",
-      img: "https://ocakes.in/hyderabad/storage/app/public/images/item/item-642f4a69991a2.jpg",
-    },
-    {
-      name: "xyz",
-      category: "cheese cake",
-      img: "https://ocakes.in/hyderabad/storage/app/public/images/item/item-642f4a69991a2.jpg",
-    },
-    {
-      name: "abc",
-      category: "cheese cake",
-      img: "https://ocakes.in/hyderabad/storage/app/public/images/item/item-642f4a69991a2.jpg",
-    },
-    {
-      name: "all cakes",
-      category: "cheese cake",
-      img: "https://ocakes.in/hyderabad/storage/app/public/images/item/item-642f4a69991a2.jpg",
-    },
-    {
-      name: "cakes",
-      category: "cheese cake",
-      img: "https://ocakes.in/hyderabad/storage/app/public/images/item/item-642f4a69991a2.jpg",
-    },
-    {
-      name: "special cakes",
-      category: "cheese cake",
-      img: "https://ocakes.in/hyderabad/storage/app/public/images/item/item-642f4a69991a2.jpg",
-    },
-    {
-      name: "new cakes",
-      category: "cheese cake",
-      img: "https://ocakes.in/hyderabad/storage/app/public/images/item/item-642f4a69991a2.jpg",
-    },
-    {
-      name: "hello",
-      category: "cheese cake",
-      img: "https://ocakes.in/hyderabad/storage/app/public/images/item/item-642f4a69991a2.jpg",
-    },
-    {
-      name: "dummy data cakes",
-      category: "cheese cake",
-      img: "https://ocakes.in/hyderabad/storage/app/public/images/item/item-642f4a69991a2.jpg",
-    },
-    {
-      name: "lorem ipsum",
-      category: "cheese cake",
-      img: "https://ocakes.in/hyderabad/storage/app/public/images/item/item-642f4a69991a2.jpg",
-    },
-    {
-      name: "Java Chip",
-      category: "cheese cake",
-      img: "https://ocakes.in/hyderabad/storage/app/public/images/item/item-642f4a69991a2.jpg",
-    },
-    {
-      name: "QQ",
-      category: "cheese cake",
-      img: "https://ocakes.in/hyderabad/storage/app/public/images/item/item-642f4a69991a2.jpg",
-    },
-  ];
-  const inputQueryUpdate = (e) => {
-    setSearchQuery(e);
-  };
-  const [searchQuery, setSearchQuery] = useState("");
-  const [searchResultClasses, setSearchResultClasses] = useState(
-    "search_result_section display_none"
-  );
-  const toggleSearchResultClasses = () => {
-    if (searchResultClasses === "search_result_section") {
-      setSearchResultClasses("search_result_section display_none");
-    } else {
-      setSearchResultClasses("search_result_section");
-    }
-  };
-  const CloseSearchResult = () => {
-    setSearchQuery("");
-    document.getElementById("search_query_input").value = "";
-  };
-  const [search_filters, setSearch_filters] = useState("all");
-  const changeSearch_filters = (e) => {
-    console.log("before", search_filters);
-    var selectedValue = e.target.value;
-    setSearch_filters(selectedValue);
-    console.log("after", search_filters);
-  };
-
   const ScrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -186,22 +35,17 @@ const NavBar_Footer = () => {
       setResponsiveNavbarClasses("responsive_navbar");
     }
   };
-  const goToCart = () => {
-    navigate("/cart");
-  };
-  const goToFav = () => {
-    navigate("/profile-favourites");
-  };
-  const location = useLocation();
 
   // whatApp
 
   const [showModal, setShowModal] = useState(false);
 
+  const [showProducts, setShowProducts] = useState(false);
+
   return (
     <>
       <div className="offer_section">
-        Any particular sale! - GET instant 50% Discount!
+        FREE Shipping now available on all orders over 1 KG!
       </div>
 
       {/* Navbar  */}
@@ -218,6 +62,9 @@ const NavBar_Footer = () => {
             />
           </div>
 
+
+
+          <div className="login_signup_button_navbar">
           <div className="navbar_links">
             <NavLink
               to="/"
@@ -226,7 +73,7 @@ const NavBar_Footer = () => {
               }}
               className="link"
             >
-              Home
+              HOME
             </NavLink>
             <NavLink
               to="/shop"
@@ -235,17 +82,44 @@ const NavBar_Footer = () => {
               }}
               className="link"
             >
-              Shop
+              ABOUT US
             </NavLink>
-            <NavLink
-              to="/corporate"
-              onClick={() => {
-                ScrollToTop();
-              }}
-              className="link"
-            >
-              Corporate
-            </NavLink>
+{/* PRODUCTS Dropdown with Full Menu */}
+<div 
+        className="dropdown-wrapper"
+        onMouseEnter={() => setShowProducts(true)}
+        onMouseLeave={() => setShowProducts(false)}
+      >
+        <NavLink to="/corporate" className="link">PRODUCTS</NavLink>
+        {showProducts && (
+          <div className="dropdown-menu">
+            <div className="dropdown-column">
+              <NavLink to="/category/all" className="dropdown-item">All</NavLink>
+              <NavLink to="/category/sweets" className="dropdown-item">Sweets</NavLink>
+              <NavLink to="/category/namkeens" className="dropdown-item">Namkeens</NavLink>
+              <NavLink to="/category/dryfruits" className="dropdown-item">Dry Fruits</NavLink>
+              <NavLink to="/category/bakery" className="dropdown-item">Bakery</NavLink>
+              <NavLink to="/category/others" className="dropdown-item">Others</NavLink>
+            </div>
+            <div className="dropdown-column">
+              <NavLink to="/category/bakery" className="dropdown-item">Bakery</NavLink>
+              <NavLink to="/category/chocolates" className="dropdown-item">Chocolates</NavLink>
+              <NavLink to="/category/others" className="dropdown-item">Others</NavLink>
+              <NavLink to="/category/others" className="dropdown-item">Others</NavLink>
+            </div>
+            <div className="dropdown-column">
+              <NavLink to="/category/bakery" className="dropdown-item">Bakery</NavLink>
+              <NavLink to="/category/chocolates" className="dropdown-item">Chocolates</NavLink>
+              <NavLink to="/category/others" className="dropdown-item">Others</NavLink>
+              <NavLink to="/category/others" className="dropdown-item">Others</NavLink>
+            </div>
+            <div className="dropdown-column">
+              <NavLink to="/category/others" className="dropdown-item">Others</NavLink>
+              <NavLink to="/category/others" className="dropdown-item">Others</NavLink>
+            </div>
+          </div>
+        )}
+      </div>
             <NavLink
               to="/about"
               onClick={() => {
@@ -253,8 +127,20 @@ const NavBar_Footer = () => {
               }}
               className="link"
             >
-              About Us
+              CORPORATE GIFTING
             </NavLink>
+
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                setShowModal(true);
+              }}
+              className="link"
+            >
+              BULK INQUIRY
+            </a>
+
             {/* <NavLink to='/blog' className={location.pathname==='/blog'?'link_active link':'link'}>Blog</NavLink> */}
             <NavLink
               to="/contact"
@@ -263,18 +149,16 @@ const NavBar_Footer = () => {
               }}
               className="link"
             >
-              Contact Us
+              CONTACT US
             </NavLink>
-            <a
-              href="#"
-              onClick={(e) => {e.preventDefault(); setShowModal(true);}} className="link">
-              Bulk Inquiry
-            </a>
           </div>
-          <div className="login_signup_button_navbar">
-            <button className="login_button" onClick={() => navigate("/login")}>
-              Login
+            <button id="Search" onClick={() => navigate("/online")}>
+              SEARCH <FaSearch style={{ marginLeft: "5px" }} />
             </button>
+            <button id="login_button" onClick={() => navigate("/online")}>
+              ORDER ONLINE
+            </button>
+            <LuCircleArrowOutDownLeft id="circle-arrow" />
           </div>
 
           {/* Bulk Inquiry Modal */}
@@ -364,7 +248,7 @@ const NavBar_Footer = () => {
               to="/shop"
               className="link"
             >
-              Shop
+              About Us
             </NavLink>
             <NavLink
               onClick={() => {
@@ -374,7 +258,7 @@ const NavBar_Footer = () => {
               to="/corporate"
               className="link"
             >
-              Corporate
+              Products
             </NavLink>
             {/* <NavLink onClick={()=>{ScrollToTop(); closeNavbarOnRoute()}} to='/customize' className='link'>Customize</NavLink> */}
             {/* <NavLink onClick={()=>{closeNavbarOnRoute()}} to='/blog' className={location.pathname==='/blog'?'link_active link':'link'}>Blog</NavLink> */}
@@ -386,7 +270,7 @@ const NavBar_Footer = () => {
               to="/about"
               className="link"
             >
-              About Us
+              Corporate Gifting
             </NavLink>
             <NavLink
               onClick={() => {
@@ -399,198 +283,7 @@ const NavBar_Footer = () => {
               Contact Us
             </NavLink>
             <NavLink>Bulk Inquery</NavLink>
-
-            <div className="responsive_navbar_cart_wishlist">
-              <div className="fav_cart_icons">
-                <svg
-                  onClick={() => {
-                    ScrollToTop();
-                    goToFav();
-                    closeNavbarOnRoute();
-                  }}
-                  width="46"
-                  height="46"
-                  viewBox="0 0 46 46"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle cx="23" cy="23" r="23" fill="white" />
-                  <path
-                    d="M23.5 31L22.2675 29.921C17.89 26.1035 15 23.5777 15 20.4959C15 17.97 17.057 16 19.675 16C21.154 16 22.5735 16.6621 23.5 17.7003C24.4265 16.6621 25.846 16 27.325 16C29.943 16 32 17.97 32 20.4959C32 23.5777 29.11 26.1035 24.7325 29.921L23.5 31Z"
-                    fill="#F16855"
-                  />
-                </svg>
-
-                <svg
-                  width="46"
-                  height="46"
-                  viewBox="0 0 46 46"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  onClick={() => {
-                    ScrollToTop();
-                    goToCart();
-                    closeNavbarOnRoute();
-                  }}
-                >
-                  <circle cx="23" cy="23" r="23" fill="white" />
-                  <path
-                    d="M27.8 27.8C26.912 27.8 26.2 28.512 26.2 29.4C26.2 29.8243 26.3686 30.2313 26.6686 30.5314C26.9687 30.8314 27.3757 31 27.8 31C28.2243 31 28.6313 30.8314 28.9314 30.5314C29.2314 30.2313 29.4 29.8243 29.4 29.4C29.4 28.9757 29.2314 28.5687 28.9314 28.2686C28.6313 27.9686 28.2243 27.8 27.8 27.8ZM15 15V16.6H16.6L19.48 22.672L18.392 24.632C18.272 24.856 18.2 25.12 18.2 25.4C18.2 25.8243 18.3686 26.2313 18.6686 26.5314C18.9687 26.8314 19.3757 27 19.8 27H29.4V25.4H20.136C20.083 25.4 20.0321 25.3789 19.9946 25.3414C19.9571 25.3039 19.936 25.253 19.936 25.2C19.936 25.16 19.944 25.128 19.96 25.104L20.68 23.8H26.64C27.24 23.8 27.768 23.464 28.04 22.976L30.904 17.8C30.96 17.672 31 17.536 31 17.4C31 17.1878 30.9157 16.9843 30.7657 16.8343C30.6157 16.6843 30.4122 16.6 30.2 16.6H18.368L17.616 15M19.8 27.8C18.912 27.8 18.2 28.512 18.2 29.4C18.2 29.8243 18.3686 30.2313 18.6686 30.5314C18.9687 30.8314 19.3757 31 19.8 31C20.2243 31 20.6313 30.8314 20.9314 30.5314C21.2314 30.2313 21.4 29.8243 21.4 29.4C21.4 28.9757 21.2314 28.5687 20.9314 28.2686C20.6313 27.9686 20.2243 27.8 19.8 27.8Z"
-                    fill="#F16855"
-                  />
-                </svg>
-              </div>
-              <button
-                className="button_1"
-                onClick={() => {
-                  navigate("/login");
-                  closeNavbarOnRoute();
-                }}
-              >
-                Login
-              </button>
-            </div>
           </div>
-        </div>
-
-        {/* Search Section  */}
-
-        <div className="search_section">
-          <div className="search_input">
-            <div className="search">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M13.658 13.6877C14.2938 13.052 14.7981 12.2972 15.1422 11.4666C15.4862 10.6359 15.6633 9.74562 15.6633 8.84652C15.6633 7.94743 15.4862 7.05713 15.1422 6.22647C14.7981 5.39581 14.2938 4.64106 13.658 4.0053C13.0223 3.36954 12.2675 2.86523 11.4369 2.52116C10.6062 2.17709 9.7159 2 8.8168 2C7.9177 2 7.02741 2.17709 6.19675 2.52116C5.36609 2.86523 4.61133 3.36954 3.97558 4.0053C2.6916 5.28927 1.97028 7.03071 1.97028 8.84652C1.97028 10.6623 2.6916 12.4038 3.97558 13.6877C5.25955 14.9717 7.00099 15.693 8.8168 15.693C10.6326 15.693 12.3741 14.9717 13.658 13.6877ZM13.658 13.6877L17.9703 18"
-                  stroke="black"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-              <input
-                type="text"
-                name=""
-                id="search_query_input"
-                placeholder="Search for your item"
-                onChange={(e) => {
-                  setSearchQuery(e.target.value.toLowerCase());
-                  toggleSearchResultClasses();
-                }}
-              />
-              <svg
-                width="15"
-                onClick={CloseSearchResult}
-                className={searchQuery == "" ? "display_none" : ""}
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M2.23652 0.368171L7.5 5.63165L12.7362 0.395443C12.8519 0.272334 12.9912 0.173851 13.1458 0.1059C13.3005 0.0379486 13.4673 0.00192859 13.6362 0C13.9978 0 14.3447 0.143664 14.6004 0.399388C14.8561 0.655112 14.9998 1.00195 14.9998 1.3636C15.003 1.53078 14.9719 1.69684 14.9086 1.8516C14.8453 2.00636 14.751 2.14655 14.6316 2.26357L9.32722 7.49978L14.6316 12.8042C14.8563 13.024 14.9881 13.3218 14.9998 13.636C14.9998 13.9976 14.8561 14.3444 14.6004 14.6002C14.3447 14.8559 13.9978 14.9996 13.6362 14.9996C13.4624 15.0068 13.289 14.9778 13.127 14.9144C12.9651 14.851 12.818 14.7546 12.6953 14.6314L7.5 9.3679L2.25016 14.6177C2.13494 14.7368 1.9973 14.8318 1.84517 14.8973C1.69304 14.9628 1.52945 14.9976 1.36382 14.9996C1.00217 14.9996 0.655334 14.8559 0.39961 14.6002C0.143886 14.3444 0.000221866 13.9976 0.000221866 13.636C-0.00295735 13.4688 0.0280602 13.3027 0.0913714 13.148C0.154682 12.9932 0.248951 12.853 0.368393 12.736L5.67278 7.49978L0.368393 2.19539C0.143652 1.97552 0.0118665 1.67779 0.000221866 1.3636C0.000221866 1.00195 0.143886 0.655112 0.39961 0.399388C0.655334 0.143664 1.00217 0 1.36382 0C1.69108 0.00409079 2.00471 0.13636 2.23652 0.368171Z"
-                  fill="black"
-                  fill-opacity="0.4"
-                />
-              </svg>
-            </div>
-            <div className="search_filter_dropdown">
-              <select
-                name="search_filter"
-                id="search-filter"
-                onChange={(e) => {
-                  changeSearch_filters(e);
-                }}
-              >
-                <option value="all" selected>
-                  All Categories
-                </option>
-                <option value="special cakes">All</option>
-                <option value="nicol cakes">Sweet</option>
-                <option value="chocolate cakes">Namkeen</option>
-                <option value="cheese cakes">Dry Fruits</option>
-                <option value="cheese cakes">Bakery</option>
-                <option value="cheese cakes">Chocolate</option>
-                <option value="cheese cakes">Others</option>
-              </select>
-            </div>
-          </div>
-          <div className="fav_cart_icons fav_cart_icons_hide">
-            <svg
-              width="46"
-              height="46"
-              viewBox="0 0 46 46"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              onClick={() => {
-                goToFav();
-                ScrollToTop();
-              }}
-            >
-              <circle cx="23" cy="23" r="23" fill="white" />
-              <path
-                d="M23.5 31L22.2675 29.921C17.89 26.1035 15 23.5777 15 20.4959C15 17.97 17.057 16 19.675 16C21.154 16 22.5735 16.6621 23.5 17.7003C24.4265 16.6621 25.846 16 27.325 16C29.943 16 32 17.97 32 20.4959C32 23.5777 29.11 26.1035 24.7325 29.921L23.5 31Z"
-                fill="#F16855"
-              />
-            </svg>
-
-            <svg
-              width="46"
-              height="46"
-              viewBox="0 0 46 46"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              onClick={() => {
-                goToCart();
-                ScrollToTop();
-              }}
-            >
-              <circle cx="23" cy="23" r="23" fill="white" />
-              <path
-                d="M27.8 27.8C26.912 27.8 26.2 28.512 26.2 29.4C26.2 29.8243 26.3686 30.2313 26.6686 30.5314C26.9687 30.8314 27.3757 31 27.8 31C28.2243 31 28.6313 30.8314 28.9314 30.5314C29.2314 30.2313 29.4 29.8243 29.4 29.4C29.4 28.9757 29.2314 28.5687 28.9314 28.2686C28.6313 27.9686 28.2243 27.8 27.8 27.8ZM15 15V16.6H16.6L19.48 22.672L18.392 24.632C18.272 24.856 18.2 25.12 18.2 25.4C18.2 25.8243 18.3686 26.2313 18.6686 26.5314C18.9687 26.8314 19.3757 27 19.8 27H29.4V25.4H20.136C20.083 25.4 20.0321 25.3789 19.9946 25.3414C19.9571 25.3039 19.936 25.253 19.936 25.2C19.936 25.16 19.944 25.128 19.96 25.104L20.68 23.8H26.64C27.24 23.8 27.768 23.464 28.04 22.976L30.904 17.8C30.96 17.672 31 17.536 31 17.4C31 17.1878 30.9157 16.9843 30.7657 16.8343C30.6157 16.6843 30.4122 16.6 30.2 16.6H18.368L17.616 15M19.8 27.8C18.912 27.8 18.2 28.512 18.2 29.4C18.2 29.8243 18.3686 30.2313 18.6686 30.5314C18.9687 30.8314 19.3757 31 19.8 31C20.2243 31 20.6313 30.8314 20.9314 30.5314C21.2314 30.2313 21.4 29.8243 21.4 29.4C21.4 28.9757 21.2314 28.5687 20.9314 28.2686C20.6313 27.9686 20.2243 27.8 19.8 27.8Z"
-                fill="#F16855"
-              />
-            </svg>
-          </div>
-        </div>
-        <div
-          className={
-            searchQuery == ""
-              ? "search_result_section display_none"
-              : "search_result_section"
-          }
-        >
-          {dummyItems
-            .filter((e) => e.name.toLowerCase().includes(searchQuery))
-            .map((item, index) => {
-              return (
-                <>
-                  <div className="productCard">
-                    <div className="productImageContainer">
-                      <img src={item.img} alt="" srcset="" />
-                    </div>
-                    <div>{item.name}</div>
-                  </div>
-                </>
-              );
-            })}
-          <h3>
-            {dummyItems.filter((e) =>
-              e.name.toLowerCase().includes(searchQuery)
-            ).length == 0 ? (
-              <div className="no_result_found_container">
-                <img src={no_results_found_png} alt="" srcset="" height={200} />
-                No items found
-              </div>
-            ) : (
-              ""
-            )}
-          </h3>
         </div>
       </div>
     </>

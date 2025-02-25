@@ -2,40 +2,118 @@
 /* svg path{
   fill: #7cce7c;
 } */
+
+
+*{
+  font-family: 'poppins';
+}
 :root{
   --primary_font: 'poppins';
   --heading_font: 'Margin DEMO';
-  --c1: #D74658;
-  --c2: #DDB343;
+  --c1: #BD9B16;
+  --c2: #B81D39;
   /* --c2: #7cce7c; */
   --c3: #000000;
   --c4: #ECECEC;
   --c5: #FFFFFF;
 }
 
+.dropdown-menu {
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  border-radius: 5px;
+  top: 253%; /* Adjusted to your requirement */
+  left: 0;
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-10px); /* Smooth transition from above */
+  transition: visibility 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+
+
+.dropdown:hover .dropdown-menu {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0); /* Moves into position */
+}
+
+
+.left{
+  padding: 10px;
+}
+
+.right{
+  padding: 10px;
+}
+
+/* .dropdown-menu .left{
+  border-right: 2px solid gray;
+} */
+
+
+.dropdown-menu a {
+  display: flex;
+  padding: 8px 15px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  transition: background-color 0.31s ease;
+}
+
+
+.dropdown-menu a:hover {
+  color: #9D0910;
+  background: #f7e4c2;
+}
+
+.dropdown-menu{
+  display: flex;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+.header1 .menu-bar i{
+  display: none;
+}
+
+.header1 .nav-link #close-btn{
+  display: none;
+}
+
+
 
 .offer_section{
-  background-color: var(--c1);
-  padding: 6px 0px;
-  color: white;
+  top: 0px;
+  position: sticky;
+  background-color: var(--c5);
+  padding: 10px 0px;
+  color: var(--c1);
   text-align: center;
-  font-size: small;
+  font-size: 16px;
+  font-weight: 500;
+  z-index: 1000;
 }
 
 /* NavBar  */
 
 .sticky_div{
   position: sticky;
-  top: 0;
+  top: 44px;
   z-index: 2000;
 }
 .navbar{
   background-color: white;
   display: flex;
   justify-content: space-between;
-  padding: 10px 40px;
+  padding: 10px 20px;
   align-items: center;
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+  border: 2px solid var(--c1);
   z-index: 10;
 }
 .navbar_menu_bars{
@@ -43,34 +121,118 @@
 }
 .responsive_navbar_links{
   display: none;
+  
 }
 .responsive_navbar_links .active{
   color: var(--c1);
   font-weight: bold;
+  text-decoration: none;
 }
+
+.responsive_navbar
 .navbar_logo{
   cursor: pointer;
 }
+
+.navbar_logo{
+  height: 100%;
+  cursor: pointer;
+  /* border: 1px solid var(--c1); */
+}
 .navbar_logo img{
-  width: 70px;
+  width: 120px;
+  height: 70px;
 }
 .navbar_links{
-  font-size: 18px;
+  font-size: 16px;
   display: flex;
-  gap: 60px;
+  gap: 30px;
+  margin-right: 30px;
 }
 .link{
   text-decoration: none;
-  color: black;
+  font-weight: 500;
+  color: var(--c1);
   transition: 0.2s;
 }
 .link:hover{
-  color: var(--c1);
+  color: var(--c2);
 }
 .navbar_links .active{
-  color: var(--c1);
+  color: var(--c2);
   font-weight: bold;
 }
+
+/* Wrapper to position the dropdown */
+.dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+  height: 10px;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: 50px; /* Moves the dropdown even further down */
+  left: 0;
+  background: white;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 15px;
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  animation: dropdownFade 0.4s ease-out forwards;
+  pointer-events: none; /* Prevents interaction when hidden */
+  min-width: 250px; /* Ensures enough width */
+}
+
+/* Fix: Show dropdown when hovering over the parent OR the dropdown itself */
+.dropdown-wrapper:hover .dropdown-menu,
+.dropdown-menu:hover {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto; /* Allows interaction */
+}
+
+
+
+/* Keyframe animation for smooth dropdown */
+@keyframes dropdownFade {
+  0% {
+    opacity: 0;
+    transform: translateY(40px); /* Starts even lower */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dropdown Columns */
+.dropdown-column {
+  padding: 10px;
+  min-width: 140px;
+}
+
+/* Dropdown Items */
+.dropdown-item {
+  display: block;
+  padding: 12px 16px;
+  font-size: 16px;
+  color: #b58900;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect for menu items */
+.dropdown-item:hover {
+  background: #f5f5f5;
+  border-radius: 5px;
+  transform: translateX(5px); /* Slight right movement on hover */
+}
+
 
 /* Modal Overlay */
 .modal-overlay {

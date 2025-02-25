@@ -237,27 +237,27 @@ input:checked + .toggle-slider:before {
 }
 
 /* Call-to-Action Button */
-.cta-container {
+.know-more {
     text-align: center;
     margin-top: 20px;
 }
 
-.cta-button {
+.knowMore-button {
     width: 200px;
     background: #D74658;
     color: white;
     padding: 10px 20px;
-    border: 3px solid #F0C75B;
+    border: 2px solid #F0C75B;
     cursor: pointer;
     font-size: 16px;
     transition: 0.3s;
     border-radius: 5px;
 }
 
-/* .cta-button:hover {
+.knowMore-button:hover {
     background: #F0C75B;
-    border: 3px solid #D74658;
-} */
+    border: 2px solid #D74658;
+}
 
 /* Error Message */
 .error-message {
