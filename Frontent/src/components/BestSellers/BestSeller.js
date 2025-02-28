@@ -1,30 +1,27 @@
 import React from "react";
 import "./BestSeller.css";
-import img1 from "../assets/Kajju.png";
-import img2 from "../assets/Kajju.png";
-import img3 from "../assets/Kajju.png";
-import img4 from "../assets/Kajju.png";
-import img5 from "../assets/Kajju.png";
-import img6 from "../assets/Kajju.png";
-import img7 from "../assets/Kajju.png";
-import img8 from "../assets/Kajju.png";
+import img1 from "../assets/Exotica.png";
+import separator from "../assets/lines.png"; // Add your decorative image
 
 const BestSeller = () => {
   const products = [
-    { id: 1, image: img1, title: "Biscoff Cheese Cake" },
-    { id: 2, image: img2, title: "Forrero rocher Cake" },
-    { id: 3, image: img3, title: "BlueBerry Cake" },
-    { id: 4, image: img4, title: "Fruit Cake" },
-    { id: 4, image: img5, title: "Pinata Cake" },
-    { id: 4, image: img6, title: "Chocolate drip Cake" },
-    { id: 4, image: img7, title: "Rasmalai Cake" },
-    { id: 4, image: img8, title: "Theme cake" },
+    { id: 1, image: img1, title: "Exotica" },
+    { id: 2, image: img1, title: "Exotica" },
+    { id: 3, image: img1, title: "Exotica" },
+    { id: 4, image: img1, title: "Exotica" },
+    { id: 5, image: img1, title: "Exotica" },
+    { id: 6, image: img1, title: "Exotica" },
+    { id: 7, image: img1, title: "Exotica" },
+    { id: 8, image: img1, title: "Exotica" },
+    { id: 9, image: img1, title: "Exotica" },
+    { id: 10, image: img1, title: "Exotica" },
   ];
 
   return (
     <div>
       <section className="featured-products-BestSeller">
-        <h2>Best Seller</h2>
+        <h2>BEST SELLER</h2>
+        <img src={separator} alt="Decoration" className="heading-separator" />
         <div className="products-container">
           {products.map((product) => (
             <div key={product.id} className="product-card-BestSeller">

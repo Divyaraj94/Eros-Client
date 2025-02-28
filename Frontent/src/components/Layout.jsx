@@ -3,6 +3,7 @@ import Footer from "./Footer/Footer";
 import { Outlet } from "react-router-dom";
 import NavBar_New from "./Navbar/NavBar_New";
 import "./Layout.css";
+import Navbar from "./Navbar/Navbar";
 
 const Layout = () => {
   const buttonRef = useRef(null);

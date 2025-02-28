@@ -143,7 +143,7 @@ html,body{
     visibility: hidden;
     opacity: 0;
     transform: translateY(-10px); /* Smooth transition from above */
-    transition: visibility 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+    /* transition: visibility 0.3s ease, opacity 0.3s ease, transform 0.3s ease; */
 }
 
 
@@ -163,9 +163,9 @@ html,body{
     padding: 10px;
 }
 
-/* .dropdown-menu .left{
+.dropdown-menu .left{
     border-right: 2px solid gray;
-} */
+}
 
 
 .dropdown-menu a {

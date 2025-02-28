@@ -1,28 +1,19 @@
 import React from "react";
 import "./cards.css";
 import img1 from "../assets/Kajju.png";
-import img2 from "../assets/Kajju.png";
-import img3 from "../assets/Kajju.png";
-import img4 from "../assets/Kajju.png";
-import img5 from "../assets/Kajju.png";
-import img6 from "../assets/Kajju.png";
+import separator from "../assets/lines.png"; // Add your decorative image
 
 const Cards = () => {
-  const products = [
-    { id: 1, image: img1, title: "Sweets" },
-    { id: 2, image: img2, title: "Namkeens" },
-    { id: 3, image: img3, title: "Dry Fruits" },
-    { id: 4, image: img4, title: "Bakery" },
-    { id: 5, image: img5, title: "Chocolates" },
-    { id: 6, image: img6, title: "Others" },
-  ];
+  const products = Array(20).fill({ image: img1, title: "Sweets" });
 
   return (
     <section className="cards-featured-products">
+      <p className="cards-subtitle">Chef Recommended</p>
       <h2 className="cards-title">Our Products</h2>
+      <img src={separator} alt="Decoration" className="cards-separator" />
       <div className="cards-products-container">
-        {products.map((product) => (
-          <div key={product.id} className="cards-product-card">
+        {products.map((product, index) => (
+          <div key={index} className="cards-product-card">
             <img src={product.image} alt={product.title} />
             <h3 className="cards-product-title">{product.title}</h3>
           </div>
@@ -33,6 +24,7 @@ const Cards = () => {
 };
 
 export default Cards;
+
 
 
 // import React, { useEffect, useState } from "react";

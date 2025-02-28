@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./Promos.css";
-import image1 from "../assets/discount.png";
-import image2 from "../assets/delievery.png";
+import image1 from "../assets/delievery.png";
+import image2 from "../assets/discount.png";
 import image3 from "../assets/offers.png";
+import separator from "../assets/lines.png"; // Add your decorative image
 
 const Promos = () => {
   const promos = [
@@ -48,6 +49,7 @@ const Promos = () => {
   return (
     <div className="promos-container-Home">
       <h2 className="slider-title-Home">Promos</h2>
+      <img src={separator} alt="Decoration" className="cards-separator-promo" />
 
       <div className={`promo-card-Home ${isSliding ? "slide-animation-Home" : ""}`}>
   <img
@@ -55,7 +57,7 @@ const Promos = () => {
     alt={promos[currentIndex].title}
     className={`promo-sticker-Home promo-sticker-Home-${currentIndex + 1}`} // Dynamically add a class based on index
   />
-  <h3 className="promo-title-Home">{promos[currentIndex].title}</h3>
+  <h3 className={`promo-title-Home-${currentIndex + 1}`}>{promos[currentIndex].title}</h3>
   <p className="promo-description-Home">{promos[currentIndex].description}</p>
 </div>
     </div>
