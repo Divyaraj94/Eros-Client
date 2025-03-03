@@ -1,0 +1,99 @@
+.app-download-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.7)), 
+                url("../assets/your-background-image.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  
+  
+  .app-download-content {
+    max-width: 45%;
+  }
+  
+  .app-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .app-subtitle {
+    font-size: 18px;
+    color: #444;
+    margin-bottom: 20px;
+  }
+  
+  .store-buttons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .store-icon {
+    width: 150px;
+    height: auto;
+    cursor: pointer;
+  }
+  
+  /* QR Code Section */
+  .qr-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .phone-frame {
+    position: relative;
+    width: 250px;
+    height: 450px;
+    background-color: #000;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .phone-frame-img {
+    width: 100%;
+    height: auto;
+    border-radius: 40px;
+  }
+  
+  .qr-overlay {
+    position: absolute;
+    width: 60%;
+    height: auto;
+  }
+  
+  .qr-code {
+    width: 100%;
+    height: auto;
+  }
+  
+  .qr-text {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .app-download-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .app-download-content {
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .store-buttons {
+      justify-content: center;
+    }
+  }
+  

@@ -7,6 +7,7 @@ import Testimonials from "./Testimonials/Testimonials";
 import BestSeller from "./BestSellers/BestSeller";
 import Delievery from "./Info/Delievery";
 import { OurInfo } from "./Info/OurInfo";
+import AppDownload from "./App/AppDownload";
 
 const HomePage = () => {
   return (
@@ -19,6 +20,7 @@ const HomePage = () => {
       <Section />
       <Testimonials />
       <BestSeller />
+      <AppDownload />
       {/* <Our_Collection /> */}
     </>
   );
