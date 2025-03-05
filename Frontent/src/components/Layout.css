@@ -1,5 +1,6 @@
 /* WhatsApp button styling */
 .whatsapp-btn2 {
+  text-decoration: none;
   position: fixed;
   background-color: green;
   color: white;

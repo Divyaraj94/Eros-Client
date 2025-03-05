@@ -76,7 +76,7 @@ const NavBar_Footer = () => {
               HOME
             </NavLink>
             <NavLink
-              to="/shop"
+              to="/about"
               onClick={() => {
                 ScrollToTop();
               }}
@@ -86,42 +86,43 @@ const NavBar_Footer = () => {
             </NavLink>
 {/* PRODUCTS Dropdown with Full Menu */}
 <div 
-        className="dropdown-wrapper"
-        onMouseEnter={() => setShowProducts(true)}
-        onMouseLeave={() => setShowProducts(false)}
-      >
-        <NavLink to="/corporate" className="link">PRODUCTS</NavLink>
-        {showProducts && (
-          <div className="dropdown-menu">
-            <div className="dropdown-column">
-              <NavLink to="/category/all" className="dropdown-item">All</NavLink>
-              <NavLink to="/category/sweets" className="dropdown-item">Sweets</NavLink>
-              <NavLink to="/category/namkeens" className="dropdown-item">Namkeens</NavLink>
-              <NavLink to="/category/dryfruits" className="dropdown-item">Dry Fruits</NavLink>
-              <NavLink to="/category/bakery" className="dropdown-item">Bakery</NavLink>
-              <NavLink to="/category/others" className="dropdown-item">Others</NavLink>
-            </div>
-            <div className="dropdown-column">
-              <NavLink to="/category/bakery" className="dropdown-item">Bakery</NavLink>
-              <NavLink to="/category/chocolates" className="dropdown-item">Chocolates</NavLink>
-              <NavLink to="/category/others" className="dropdown-item">Others</NavLink>
-              <NavLink to="/category/others" className="dropdown-item">Others</NavLink>
-            </div>
-            <div className="dropdown-column">
-              <NavLink to="/category/bakery" className="dropdown-item">Bakery</NavLink>
-              <NavLink to="/category/chocolates" className="dropdown-item">Chocolates</NavLink>
-              <NavLink to="/category/others" className="dropdown-item">Others</NavLink>
-              <NavLink to="/category/others" className="dropdown-item">Others</NavLink>
-            </div>
-            <div className="dropdown-column">
-              <NavLink to="/category/others" className="dropdown-item">Others</NavLink>
-              <NavLink to="/category/others" className="dropdown-item">Others</NavLink>
-            </div>
-          </div>
-        )}
+  className="dropdown-wrapper"
+  onMouseEnter={() => setShowProducts(true)}
+  onMouseLeave={() => setShowProducts(false)}
+>
+  <NavLink to="/shop" onClick={() => { ScrollToTop();}}className="link">PRODUCTS</NavLink>
+  {showProducts && (
+    <div className="dropdown-menu">
+      <div className="dropdown-column">
+        <NavLink to="/category/all">All</NavLink>
+        <NavLink to="/category/sweets">Sweets</NavLink>
+        <NavLink to="/category/namkeens">Namkeens</NavLink>
+        <NavLink to="/category/dryfruits">Dry Fruits</NavLink>
+        <NavLink to="/category/bakery">Bakery</NavLink>
+        <NavLink to="/category/others">Others</NavLink>
       </div>
+      <div className="dropdown-column">
+        <NavLink to="/category/all">All</NavLink>
+        <NavLink to="/category/sweets">Sweets</NavLink>
+        <NavLink to="/category/namkeens">Namkeens</NavLink>
+        <NavLink to="/category/dryfruits">Dry Fruits</NavLink>
+        <NavLink to="/category/bakery">Bakery</NavLink>
+        <NavLink to="/category/others">Others</NavLink>
+      </div>
+      <div className="dropdown-column">
+        <NavLink to="/category/all">All</NavLink>
+        <NavLink to="/category/sweets">Sweets</NavLink>
+        <NavLink to="/category/namkeens">Namkeens</NavLink>
+        <NavLink to="/category/dryfruits">Dry Fruits</NavLink>
+        <NavLink to="/category/bakery">Bakery</NavLink>
+        <NavLink to="/category/others">Others</NavLink>
+      </div>
+    </div>
+  )}
+</div>
+
             <NavLink
-              to="/about"
+              to="/corporate"
               onClick={() => {
                 ScrollToTop();
               }}
@@ -152,10 +153,12 @@ const NavBar_Footer = () => {
               CONTACT US
             </NavLink>
           </div>
-            <button id="Search" onClick={() => navigate("/online")}>
+            <button id="Search" >
+            {/* onClick={() => navigate("/online")} */}
               SEARCH <FaSearch style={{ marginLeft: "5px" }} />
             </button>
-            <button id="login_button" onClick={() => navigate("/online")}>
+            <button id="order_online"> 
+            {/* onClick={() => navigate("/online")} */}
               ORDER ONLINE
             </button>
             <LuCircleArrowOutDownLeft id="circle-arrow" />
@@ -282,7 +285,7 @@ const NavBar_Footer = () => {
             >
               Contact Us
             </NavLink>
-            <NavLink>Bulk Inquery</NavLink>
+            <NavLink>Bulk Inquiry</NavLink>
           </div>
         </div>
       </div>

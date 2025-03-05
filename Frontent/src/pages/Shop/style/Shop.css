@@ -72,10 +72,16 @@
   /* Left Sidebar: Categories & Filters */
   .left-sidebar {
     position: sticky;
+    overflow-y: scroll;
+    height: 77vh;
     top: 150px;
     display: flex;
     flex-direction: column;
     gap: 20px;
+  }
+
+  .left-sidebar::-webkit-scrollbar {
+    display: none;
   }
   
   .left-sidebar .box {
@@ -106,7 +112,7 @@
   
   .category-list li.active {
     font-weight: bold;
-    color: #e63946;
+    color: var(--c2);
   }
   
   .category-item {
@@ -480,14 +486,17 @@
 .promo-sticker-1 img {
   padding-top: 9px;
   width: 100px;
+  rotate: 16.53deg;
 }
 
 .promo-sticker-2 img {
   width: 80px;
+  rotate: -25.18deg;
 }
 
 .promo-sticker-3 img {
   width: 120px;
+  rotate: 2.39deg;
 }
 
 /* Text */
@@ -643,9 +652,9 @@
 }
 
 .weight-options-shop button {
-  background: #f8e1e1;
-  border: 1px solid #ff6347;
-  color: #ff6347;
+  background-color: #F3C4CD;
+  border: 1px solid var(--c1);
+  color: white;
   padding: 5px 10px;
   border-radius: 5px;
   margin: 3px;
@@ -653,14 +662,14 @@
 }
 
 .weight-options-shop button.selected {
-  background-color: #ff6347;
-  color: white;
+  background-color: var(--c2);
+  color: var(--c1);
 }
 
-.weight-options-shop button.active {
+/* .weight-options-shop button.active {
   background-color: #ff6347;
   color: white;
-}
+} */
 
 /* Scroll Container */
 .best-sellers-shop {

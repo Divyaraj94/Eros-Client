@@ -10,7 +10,7 @@ html, body {
 
 
 ::-webkit-scrollbar{
-  width: 3px;
+  width: 5px;
   height: 3px;
 }
 
@@ -19,6 +19,6 @@ html, body {
 }
 
 ::-webkit-scrollbar-thumb{
-  background: #9D0910;
+  background: var(--c2);
   border-radius: 10px;
 }

@@ -79,7 +79,7 @@
   width: 230px;
   height: 110px;
   top: -20%;
-  rotate: 2.39deg;
+  rotate: 3.9deg;
 }
 
 .promo-sticker-Home-2 {
@@ -92,7 +92,7 @@
 .promo-sticker-Home-3 {
   width: 155px;
   height: 114px;
-  top: -1%;
+  top: 0.5%;
   rotate: 16.53deg;
 }
 
@@ -116,12 +116,17 @@
 }
 
 @media (max-width: 480px) {
-  .slider-title-Home {
-      font-size: 1.5rem;
+  .slider-title-Home{
+    font-size: 28.8px;
   }
-  .promo-card-Home {
+
+  .cards-separator-promo {
+    width: 40%;
+  }
+    .promo-card-Home {
       /* padding: 40px 15px; */
       height: 150px;
+      font-size: 10px;
   }
   .promo-sticker-Home {
       top: -50px; /* Adjusted to move it higher */
@@ -129,8 +134,8 @@
   }
 
   .promo-sticker-Home-1 {
-    width: 100px; /* Increased size for consistency */
-    height: 100px;
+    width: 200px; /* Increased size for consistency */
+    height: 130px;
 }
   .promo-sticker-Home-2 {
       width: 120px; /* Increased size for consistency */
@@ -138,7 +143,23 @@
   }
 
   .promo-sticker-Home-3 {
-    width: 100px; /* Increased size for consistency */
-    height: 110px;
-}
+    width: 140px; /* Increased size for consistency */
+    height: 205px;
+  }
+
+  .promo-title-Home-1{
+    font-size: 20px;
+  }
+
+  .promo-title-Home-2{
+    font-size: 20px;
+  }
+
+  .promo-title-Home-3{
+    font-size: 20px;
+  }
+
+  .promo-description-Home{
+    font-size: 15px;
+  }
 }

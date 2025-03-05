@@ -1,4 +1,4 @@
-#login_button{
+#order_online{
     background-color: var(--c2);
     border: 2px solid var(--c1);
     padding: 5px 10px;
@@ -8,7 +8,7 @@
     color: var(--c1);
     transition: 0.3s all ease;
   }
-  #login_button:hover{
+  #order_online:hover{
     background-color: var(--c1);
     font-size: 14px;
     border: 2px solid var(--c1);
@@ -16,7 +16,7 @@
     font-weight: 400;
   }
 
-  #login_button:active{
+  #order_online:active{
     background-color: #cf3e2b;
     transition: 0s;
   }
@@ -98,7 +98,7 @@
 
 
   @media screen and (max-width: 850px) {
-    .login_button{
+    .order_online{
         display: none;
     }
   }

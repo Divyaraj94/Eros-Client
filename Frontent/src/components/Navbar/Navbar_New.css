@@ -18,28 +18,30 @@
   --c5: #FFFFFF;
 }
 
+
 .dropdown-menu {
   position: absolute;
   background-color: #fff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 10px 0;
+  padding: 50px 0;
   border-radius: 5px;
-  top: 253%; /* Adjusted to your requirement */
   left: 0;
   z-index: 1000;
-  visibility: hidden;
-  opacity: 0;
-  transform: translateY(-10px); /* Smooth transition from above */
-  transition: visibility 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+  /* display: none;  */
+}
+
+.dropdown-wrapper {
+  position: relative;
 }
 
 
-
-.dropdown:hover .dropdown-menu {
+.dropdown-wrapper:hover .dropdown-menu {
   visibility: visible;
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 20;
+  transform: translateY(-15%); 
+  display: flex; /* Ensure it appears */
 }
+
 
 
 .left{
@@ -50,12 +52,12 @@
   padding: 10px;
 }
 
-/* .dropdown-menu .left{
+.dropdown-menu .left{
   border-right: 2px solid gray;
-} */
+}
 
 
-/* .dropdown-menu a {
+.dropdown-menu a {
   display: flex;
   padding: 8px 15px;
   text-decoration: none;
@@ -72,10 +74,6 @@
 
 .dropdown-menu{
   display: flex;
-} */
-
-.dropdown:hover .dropdown-menu {
-  display: flex;
 }
 
 .header1 .menu-bar i{
@@ -86,8 +84,6 @@
   display: none;
 }
 
-
-
 .offer_section{
   top: 0px;
   position: sticky;
@@ -97,7 +93,7 @@
   text-align: center;
   font-size: 16px;
   font-weight: 500;
-  z-index: 1000;
+  z-index: 2000;
 }
 
 /* NavBar  */
@@ -111,11 +107,21 @@
   background-color: white;
   display: flex;
   justify-content: space-between;
-  padding: 10px 20px;
+  padding: 0px 20px;
   align-items: center;
   border: 2px solid var(--c1);
   z-index: 10;
 }
+
+.navbar_logo{
+  flex: 2; /* Larger middle section */
+}
+
+.navbar_menu_bars,  #circle-arrow {
+  flex: 1; /* Smaller side sections */
+  
+}
+
 .navbar_menu_bars{
   display: none;
 }
@@ -124,9 +130,13 @@
   
 }
 .responsive_navbar_links .active{
-  color: var(--c1);
+  color: var(--c2);
   font-weight: bold;
   text-decoration: none;
+}
+
+.responsive_navbar_links a.active{
+  color: none;
 }
 
 .responsive_navbar
@@ -141,7 +151,7 @@
 }
 .navbar_logo img{
   width: 120px;
-  height: 70px;
+  height: 100%;
 }
 .navbar_links{
   font-size: 16px;
@@ -409,6 +419,8 @@
   }
 }
 @media screen and (max-width: 850px) {
+
+
   .sticky_div{
     position: sticky;
   }
@@ -421,7 +433,12 @@
     display: none;
   }
   .navbar{
-    padding: 10px 20px;
+    padding: 10px 5px;
+  }
+
+  .navbar_logo img{
+    width: 90px;
+    height: 100%;
   }
   .navbar_menu_bars{
     display: block;
@@ -466,43 +483,58 @@
   }
 }
 @media screen and (max-width: 660px) {
-
-  .default_page_navigation_links{
-    font-size: 12px;
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10px;
   }
 
-  .search_input{
-    gap: 10px;
-  }
-  .search{
-    width: 100%;
-    border-radius: 6px;
-  }
-  .search_filter_dropdown{
-    padding: 3px 0px;
-    border-radius: 6px;
-    background-color: rgb(231, 231, 231);
-    width: 50%;
-  }
-  .search_filter_dropdown select{
-    background-color: transparent;
-    font-size: 10px;
-    text-align: center;
-    border-radius: 6px;
-    -moz-appearance: none;
-    -webkit-appearance: none;
+  .navbar_logo {
+    flex: 0.3;
+    display: flex;
+    justify-content: center;
   }
 
-  .search_result_section .productCard{
-    width: 150px;
-    height: 150px;
-  }
-  .search_result_section .productCard div{
-    font-size: 12px;
-  }
-  .search_result_section .productCard img{
-    height: 150px;
-    width: 150px;
-  }
-
+  .navbar_menu_bars {
+    flex: 0.3; /* Reduce space taken */
+    display: flex;
+    justify-content: right;
+    width: auto; /* Remove fixed width */
 }
+
+.navbar_menu_bars i {
+    font-size: 100px; /* Adjust icon size */
+    padding: 5px;
+}
+
+
+  #circle-arrow {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  #order_online{
+    display: none;
+  }
+
+  #circle-arrow{
+    display: none;
+  }
+
+  #Search{
+    padding: 10px 20px;
+    justify-items: center;
+    margin: 0px;
+  }
+
+  .offer_section{
+    font-size: 12px;
+    height: 44px;
+  }
+}
+
+
+
+

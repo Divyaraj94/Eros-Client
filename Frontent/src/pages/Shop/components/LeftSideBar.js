@@ -50,7 +50,7 @@ const LeftSidebar = ({
           <input
             type="range"
             min="0"
-            max="7000"
+            max="500"
             value={priceRange}
             onChange={(e) => setPriceRange(e.target.value)}
           />

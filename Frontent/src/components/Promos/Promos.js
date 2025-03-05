@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./Promos.css";
-import image1 from "../assets/delievery.png";
-import image2 from "../assets/discount.png";
-import image3 from "../assets/offers.png";
+import image1 from "../assets/delievery1.png";
+import image2 from "../assets/discount1.png";
+import image3 from "../assets/offers1.png";
 import separator from "../assets/lines.png"; // Add your decorative image
 
 const Promos = () => {

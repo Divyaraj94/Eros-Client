@@ -58,11 +58,11 @@
             <ul>
             <li onClick={scrollToTop}>Home</li>
 
-              <li onClick={scrollToTop}>Shop</li>
               <li>About Us</li>
+              <li onClick={scrollToTop}>Products</li>
+              <li>Corporate Gifting</li>
+              <li>Bulk Inquiry</li>
               <li>Contact Us</li>
-              <li>Promo Codes</li>
-              <li>Store Locator</li>
             </ul>
           </div>
 
@@ -94,7 +94,7 @@
 
         {/* Bottom Section */}
         <div className="footer-bottom">
-          <p>© Copyright 2024, all rights reserved</p>
+          <p>© Copyright 2025, all rights reserved</p>
           <div className="payment-icons">
             <img src={mastercardIcon} alt="Mastercard" />
             <img src={upiIcon} alt="UPI" />

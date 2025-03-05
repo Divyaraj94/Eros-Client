@@ -262,6 +262,14 @@
 
 /* Mobile (Below 768px) */
 @media (max-width: 768px) {
+
+  .payment-icons img {
+    width: 45px;
+    margin-left: 0px;
+    transition: 0.3s ease;
+    filter: drop-shadow(0px 7px 3px rgba(0, 0, 0, 0.3)); /* Adds shadow */
+  }
+
   .footer-container {
     flex-direction: left;
     align-items: left;
@@ -276,6 +284,8 @@
     width: 100%;
     text-align: center;
     margin-bottom: 20px;
+    padding: 0%;
+    justify-content: center;
   }
 
   .footer-bottom {

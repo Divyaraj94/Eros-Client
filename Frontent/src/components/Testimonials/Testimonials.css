@@ -172,6 +172,10 @@
 }
 
 @media (max-width: 576px) {
+
+    .cards-separator{
+        width: 60%;
+    }
     .testimonials-section {
         padding: 70px 0;
     }
@@ -186,6 +190,6 @@
         font-size: 16px;
     }
     .snack-left, .snack-right {
-        width: 60px;
+        display: none;
     }
 }

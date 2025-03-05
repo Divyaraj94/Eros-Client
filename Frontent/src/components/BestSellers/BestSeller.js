@@ -31,13 +31,6 @@ const BestSeller = () => {
           ))}
         </div>
       </section>
-      <div className="like">
-        <div className="heading">
-          <h2>Like Our Products ?</h2>
-          <p>Treat yourself to your favourite Eros products or surprise your loved ones with an edible gift.</p>
-          <button>Know more </button>
-        </div>
-      </div>
     </div>
   );
 };

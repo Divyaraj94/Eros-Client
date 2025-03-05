@@ -134,22 +134,23 @@ select:first-child {
     border-right: 1px solid var(--c2);
 }
 
-/* Add dropdown arrow icon */
-.dropdowns::after {
-    content: "▼";  /* Unicode down arrow */
+/* Default: Web/Desktop (Arrows stay on the right) */
+.dropdowns::after, 
+.dropdowns::before {
+    content: "▼";
     font-size: 14px;
     color: black;
     position: absolute;
-    right: 16px;
     pointer-events: none;
 }
-.dropdowns::before{
-    content: "▼";  /* Unicode down arrow */
-    font-size: 14px;
-    color: black;
-    position: absolute;
+
+/* Adjusting Arrow Positions for Web */
+.dropdowns::after {
+    right: 16px;
+}
+
+.dropdowns::before {
     left: 155px;
-    pointer-events: none;
 }
   
   select:disabled {
@@ -294,5 +295,140 @@ body.modal-open {
     background-color: #555;
     border-radius: 5px;
 }
+
+/* Existing styles remain unchanged */
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .delivery-card {
+        width: 80%;  /* Increase width on tablets */
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+
+    .location-btn {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+
+    select {
+        font-size: 14px;
+        padding: 10px 12px;
+        width: 160px;  /* Reduce width for smaller screens */
+    }
+
+    .modal-container-home {
+        width: 400px;
+        padding: 20px;
+    }
+
+    .modal-image-home {
+        width: 160px;
+        height: 120px;
+    }
+
+    .modal-buttons-home button {
+        padding: 10px;
+        font-size: 13px;
+    }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .delivery-container {
+        padding: 20px; /* Add padding for better spacing */
+    }
+
+    .delivery-card {
+        width: 95%;  /* Adjust for smaller screens */
+        padding: 15px;
+    }
+
+    .tabs {
+        gap: 20px; /* Reduce space between tabs */
+    }
+
+    .tabs button {
+        font-size: 16px;
+    }
+
+    .title {
+        font-size: 18px;
+    }
+
+    .location-section {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .location-btn {
+        font-size: 14px;
+        width: 100%; /* Make button full-width */
+        padding: 12px;
+    }
+
+    .dropdowns {
+        flex-direction: row;
+        /* gap: 10px; */
+        align-items: center;
+        width: 100%;
+    }
+
+    .dropdown-wrapper {
+        width: 100%;
+        max-width: 320px;
+        position: relative;
+    }
+
+    .dropdowns::before {
+        left: auto;
+        right: 5px; /* Move arrow inside */
+    }
+
+    .dropdowns::after {
+        right: auto;/* Hide extra arrow */
+        left: 110px;
+    }
+
+    select {
+        width: 100%;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    /* Modal */
+    .modal-container-home {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .modal-header-home {
+        font-size: 18px;
+    }
+
+    .modal-image-home {
+        width: 140px;
+        height: 100px;
+    }
+
+    .modal-message-home {
+        font-size: 14px;
+    }
+
+    .modal-buttons-home {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .modal-buttons-home button {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
   
   
